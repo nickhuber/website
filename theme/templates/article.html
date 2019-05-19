@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}{{ SITENAME }} - {{ article.title }}{% endblock %}
+
+{% block head %}
+    {{ super() }}
+    {% if article.description %}
+        <meta name="description" content="{{article.description}}" />
+    {% endif %}
+
+    {% for tag in article.tags %}
+        <meta name="tags" content="{{tag}}" />
+    {% endfor %}
+
+{% endblock %}
+
+{% block content %}
+    <section>
+        <header>
+            <h1>
+                {{ article.title }}
+            </h1>
+        </header>
+        <footer>
+            {% if article.tags %}
+            <div>
+                Tags:
+                {% for tag in article.tags %}
+                    <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </footer>
+        <div >
+            {{ article.content }}
+        </div>
+        <div class="float-right text-muted">
+            <time datetime="{{ article.date.isoformat() }}">
+                Written on {{ article.locale_date }}
+            </time>
+            {% if article.modified %}
+                <time datetime="{{ article.modified.isoformat() }}">
+                    then revised on {{ article.locale_modified }}
+                </time>
+            {% endif %}
+        </div>
+    </section>
+{% endblock %}

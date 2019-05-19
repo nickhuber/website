@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="{% block html_lang %}{{ DEFAULT_LANG }}{% endblock html_lang %}">
+
+<head>
+    {% block head %}
+        <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
+        <meta charset="utf-8" />
+        <script src="{{ SITEURL }}/theme/bootstrap.bundle.min.js"></script>
+        <link href="{{ SITEURL }}/theme/bootstrap.min.css" rel="stylesheet">
+        <link href="{{ SITEURL }}/theme/syntax.css" rel="stylesheet">
+        <link href="{{ SITEURL }}/theme/extra.css" rel="stylesheet">
+    {% endblock head %}
+</head>
+
+<body>
+    <section class="container">
+        <header class="jumbotron">
+            <div class="row">
+                <div class="col">
+                    <img src="{{ SITEURL }}/theme/me.jpg" class="rounded">
+                </div>
+                <div class="col-10">
+                    <h1 class="display-4">
+                        <a href="{{ SITEURL }}/">{{ SITENAME }} <strong>{{ SITESUBTITLE }}</strong></a>
+                    </h1>
+                    <div class="row">
+                        <div class="col">
+                            <p class="lead">Programmer, gamer, father</p>
+                        </div>
+                        <div class="col">
+                            <div class="float-right">
+                                {% for name, link in SOCIAL %}
+                                    <div class="d-inline-block social-link text-center">
+                                        <a href="{{ link }}">
+                                            <div>
+                                                {{ name }}
+                                            </div>
+                                            <img src="{{ SITEURL }}/theme/icons/{{ name }}.png" class="social-icon">
+                                        </a>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <hr class="my-4">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <ul class="nav nav-pills">
+                        {% if DISPLAY_PAGES_ON_MENU %}
+                            {% for p in pages %}
+                                <li class="nav-item">
+                                    <a href="{{ SITEURL }}/{{ p.url }}" class="nav-link {% if output_file == p.save_as %} active {% endif %}">{{ p.title }}</a>
+                                </li>
+                            {% endfor %}
+                        {% endif %}
+                        {% if DISPLAY_CATEGORIES_ON_MENU %}
+                            <!-- TODO: Support more categories-->
+                            <li class="nav-item">
+                                <a href="{{ SITEURL }}/category/blog/page/1/" class="nav-link {% if 'category/blog' in output_file or article %} active {% endif %}">Blog</a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <section>
+            {% block content %}
+            {% endblock %}
+        </section>
+    </section>
+</body>
+
+</html>
