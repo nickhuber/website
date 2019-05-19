@@ -24,7 +24,7 @@ REST Framework. The frontend is a pretty simple Vuejs with Axios to handle the
 requests.
 
 I am very happy with how it works right now, and am looking forward to adding
-more features to it. It is my first project that i have actually managed to get
+more features to it. It is my first project that I have actually managed to get
 users for, even if it is just my friends.
 
 
