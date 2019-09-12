@@ -14,7 +14,8 @@ sure the camera kernel module is loaded. Writing a file like
 
 .. code-block:: bash
 
-    [nick@camerapi ~]$ cat /etc/modules-load.d/bcm2835-v4l2.conf bcm2835-v4l2
+    [nick@camerapi ~]$ cat /etc/modules-load.d/bcm2835-v4l2.conf
+    bcm2835-v4l2
 
 will ensure it is loaded at boot, and you can just do ``modprobe bcm2835-v4l2`` to
 load it at runtime. If you don't want to run everything as root, just make sure
@@ -26,9 +27,11 @@ Getting frames from the camera itself is easy enough,
 
 .. code-block:: python
 
-    import cv2 camera = cv2.VideoCapture(0) ret, frame = camera.read() #
-    Optionally encode the frame into a more readable format ret, encoded =
-    cv2.imencode(".jpg", frame)
+    import cv2
+    camera = cv2.VideoCapture(0)
+    ret, frame = camera.read()
+    # Optionally encode the frame into a more readable format
+    ret, encoded = cv2.imencode(".jpg", frame)
 
 There are many more options available to do things like setting the frame height
 and width, but I would suggest reading the `OpenCV documentation`_ for that.
@@ -95,30 +98,36 @@ but works as a starting point.
 
 
 Since I wanted to be able to see the data my camera was capturing before going
-any further into image processing, I setup a simple Flask webserver and served
+any further into image processing, I setup a simple Flask web server and served
 the frames over a socket.io connection
 
 .. code-block:: python
 
-    #!/usr/bin/env python3 # -*- coding: utf-8 -*- import base64
+    #!/usr/bin/env python3
+    # -*- coding: utf-8 -*-
+    import base64
 
-    from flask import Flask, render_template, Response from flask_socketio
-    import SocketIO, emit
+    from flask import Flask, render_template, Response
+    from flask_socketio import SocketIO, emit
 
     from camera import Camera
 
-    app = Flask(__name__) socketio = SocketIO(app)
+    app = Flask(__name__)
+    socketio = SocketIO(app)
 
     camera = Camera()
 
 
-    @app.route("/") def index():
-        """Video streaming home page.""" return render_template("index.html")
+    @app.route("/")
+    def index():
+        """Video streaming home page."""
+        return render_template("index.html")
 
 
-    @socketio.on("request-frame", namespace="/camera-feed") def
-    camera_frame_requested(message):
-        frame = camera.get_frame() if frame is not None:
+    @socketio.on("request-frame", namespace="/camera-feed")
+    def camera_frame_requested(message):
+        frame = camera.get_frame()
+        if frame is not None:
             emit("new-frame", {
                 "base64": base64.b64encode(frame).decode("ascii")
             })
@@ -126,26 +135,36 @@ the frames over a socket.io connection
 
     if __name__ == "__main__":
         try:
-            camera.start() socketio.run(app, host="0.0.0.0", port=8080)
+            camera.start()
+            socketio.run(app, host="0.0.0.0", port=8080)
         except KeyboardInterrupt:
             camera.stop()
+
 
 With an associated simple HTML page
 
 .. code-block:: html
 
-    <!doctype html> <html> <head>
-        <meta charset="utf-8"> <title>Camera Live Feed</title> <link
-        rel="stylesheet" href="../static/bulma.min.css"/> <link rel="stylesheet"
-        href="../static/style.css"/> <script
-        src="../static/socketio.js"></script> <script
-        src="../static/main.js"></script>
-    </head> <body>
-        <div class="container"> <div class="center">
-            <h1>Camera Live Feed</h1> <img id="camera-frame" width="640"
-            height="480">
-        </div> </div>
-    </body> </html>
+    <!doctype html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <title>Camera Live Feed</title>
+        <link rel="stylesheet" href="../static/bulma.min.css"/>
+        <link rel="stylesheet" href="../static/style.css"/>
+        <script src="../static/socketio.js"></script>
+        <script src="../static/main.js"></script>
+    </head>
+    <body>
+        <div class="container">
+        <div class="center">
+            <h1>Camera Live Feed</h1>
+            <img id="camera-frame" width="640" height="480">
+        </div>
+        </div>
+    </body>
+    </html>
+
 
 And finally a bit of JavaScript to tie everything together. I wanted to use pure
 websockets but it seems the flask-socketio library needs the socketio javascript
@@ -154,13 +173,13 @@ library to negotiate their use or something.
 .. code-block:: javascript
 
     document.addEventListener("DOMContentLoaded", function(event) { 
-        const socket =
-        io.connect(`ws://${document.domain}:${location.port}/camera-feed`);
+        const socket = io.connect(`ws://${document.domain}:${location.port}/camera-feed`);
         socket.on('new-frame', message => {
             document.getElementById('camera-frame').setAttribute(
                 'src', `data:image/jpeg;base64,${message.base64}`
             );
-        }); window.setInterval(() => {
+        });
+        window.setInterval(() => {
             socket.emit('request-frame', {});
         }, 100);
 
@@ -168,7 +187,7 @@ library to negotiate their use or something.
 
 I saw many other example using a streaming mjpeg format to accomplish the same
 sort of effect without any JavaScript, but was having some issues with that and
-wanted an excuse to use websocekts for something for a while.
+wanted an excuse to use websockets for something for a while.
 
 See `My Github repository`_ for the full source code of my starting project.
 
