@@ -11,10 +11,6 @@
     width: auto;
 }
 
-html,body{
-    height: 100%
-}
-
 .highlight pre {
     margin-left: 2em;
     margin-right: 2em;

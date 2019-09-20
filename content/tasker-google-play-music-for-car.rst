@@ -2,6 +2,7 @@ Using Tasker and intents to play Google Play Music when you start driving
 ==========================================================================
 
 :date: 2019-09-13
+:modified: 2019-09-19
 :category: Blog
 :slug: intents-tasker-google-play-music-for-car
 :summary:
@@ -22,19 +23,25 @@ intent information can be gained from this `useful reddit post`_ but what I ente
 
 .. code::
 
-    Action:android.media.action.MEDIA_PLAY_FROM_SEARCH 
-    Cat:Default 
-    Mime Type: 
-    Data: 
-    Extra:android.intent.extra.focus:vnd.android.cursor.item/playlist 
-    Extra:query:Driving Music
-    Extra: 
-    Package:com.google.android.music 
-    Class: 
-    Target:Activity 
+    Action:android.media.action.MEDIA_PLAY_FROM_SEARCH
+    Cat:None
+    Mime Type:
+    Data:
+    Extra:query:Driving
+    Extra:android.intent.extra.focus:vnd.android.cursor.item/playlist
+    Extra:
+    Package:com.google.android.music
+    Class:
+    Target:Activity
 
 You can then test the task by clicking the play button in the lower left, it
 should open up Google Play Music and begin playing the playlist you selected.
+Note that automatically generated playlists liked "Thumbs up" and "Last added"
+don't seem to work with this method.
+
+I had some issues if I played a radio with the same name from a previous bad
+attempt at running the task, but just manually playing the playlist defined in
+the query again seemed to correct this behaviour from ever happening again.
 
 With that done its time to cause this task to trigger when we want it to. I use
 the connection to my car's bluetooth system. In Tasker navigate to the Profiles
@@ -43,8 +50,8 @@ for the category, and then "BT Connected" You can use the magnifying glass
 picker icon for both the name and address rows to ensure that this only triggers
 when you connect to the specific bluetooth device that you want.
 
-All thats left to do now is enable bluetooth and turn on the bluetooth device
-and watch tasker start playing your music for you. I found this much simpler
+All that is left to do now is enable bluetooth and turn on the bluetooth device
+and watch Tasker start playing your music for you. I found this much simpler
 than fiddling with AutoTools_. I just wish that it was easier to discover and
 use all the various intents that are available on your phone.
 
