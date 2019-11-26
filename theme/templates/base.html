@@ -62,9 +62,11 @@
                             {% endfor %}
                         {% endif %}
                         {% if DISPLAY_CATEGORIES_ON_MENU %}
-                            <!-- TODO: Support more categories-->
                             <li class="nav-item">
-                                <a href="{{ SITEURL }}/category/blog/page/1/" class="nav-link {% if 'category/blog' in output_file or article %} active {% endif %}">Blog</a>
+                                <a href="{{ SITEURL }}/category/blog/page/1/" class="nav-link {% if 'category/blog' in output_file or (article and article.category == 'Blog') %} active {% endif %}">Blog</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ SITEURL }}/category/review/page/1/" class="nav-link {% if 'category/review' in output_file or (article and article.category == 'Review') %} active {% endif %}">Reviews</a>
                             </li>
                         {% endif %}
                     </ul>
