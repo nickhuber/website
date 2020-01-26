@@ -27,7 +27,8 @@ achieve this behaviour, but is not intuitive at all. On a file in the
     My new root page
     =================
 
-    :url:
+    :untitled:
+    :override_url:
     :save_as: index.html
 
     This is my homepage, it is not just a listing of articles.

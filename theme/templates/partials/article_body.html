@@ -1,0 +1,51 @@
+            <article>
+                <header>
+                    {% if article.title %}
+                    <h1>
+                        <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" {% if page_name is undefined %}class="no-line"{% endif %} title="Permanent link to &quot;{{ article.title }}&quot;">{{ article.title }}</a>{% if article.status == 'draft' %} &mdash; DRAFT {% endif %}
+                    </h1>
+                    {% endif %}
+
+                    <p><span class="newthought">{{ article.locale_date }}</span></p>
+                </header>
+
+                <section>
+                {{ article.content }}
+                </section>
+
+                {% if article.status == 'draft' %}
+                <section>
+                    <hr><p>This is a draft.
+                </section>{% endif %}
+
+                <footer class="de-emphasize">
+                    <p>Written
+                       at {{ article.date.strftime("%H:%M") }}
+                       on  {{ article.locale_date }}
+                    {% if article.modified %}
+                    <p>Modified
+                       at {{ article.modified.strftime("%H:%M") }}
+                       on {{ article.locale_modified }}.
+                    {% endif %}
+                    {%- if article.tags %}
+                    <p>Tagged with
+                    {% for t in article.tags %}
+                    <a href="{{ SITEURL }}/{{ t.url }}" class="tags{% if tag and tag.name == t.name %} selected{% endif %}">{{ t }}</a>{%
+                        if loop.length > 2 and loop.nextitem is defined and loop.index0 < loop.length - 2 %}, {%
+                        elif loop.length > 2 and loop.index0 == loop.length - 2 %}, and {%
+                        elif loop.length > 2 and loop.nextitem is defined %}, {%
+                        elif loop.length == 2 and loop.nextitem is defined %} and {%
+                        else %}.{% endif %}
+                    {% endfor %}
+                    {% endif %}
+                    {% if article.category.name != "" %}
+                    <p><span>Categorized as &ldquo;<a href="{{ SITEURL }}/{{ article.category.url }}" rel="tag">{{ article.category }}</a>&rdquo;</span></p>
+                    {% endif %}
+
+                </footer>
+		{% if articles_page and DISQUS_SITENAME %}
+		<a href="{{ SITEURL }}/{{ article.url }}#disqus_thread">Click to read and post comments</a>
+		{% else %}
+		{% include "disqus.html" %}
+		{% endif %}
+            </article>

@@ -1,83 +1,76 @@
 <!DOCTYPE html>
-<html lang="{% block html_lang %}{{ DEFAULT_LANG }}{% endblock html_lang %}">
-
+<html lang="{{ DEFAULT_LANG }}">
 <head>
     {% block head %}
-        <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
-        <meta charset="utf-8" />
-        <script src="{{ SITEURL }}/theme/bootstrap.bundle.min.js"></script>
-        <link href="{{ SITEURL }}/theme/bootstrap.min.css" rel="stylesheet">
-        <link href="{{ SITEURL }}/theme/syntax.css" rel="stylesheet">
-        <link href="{{ SITEURL }}/theme/extra.css" rel="stylesheet">
-    {% endblock head %}
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
+    {# favicon #}
+    <link rel="shortcut icon" type="image/x-icon" href="{{ SITEURL }}/theme/favicon.ico">
+    {% if FEED_ALL_ATOM %}
+    <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Full Atom Feed" />
+    {% endif %}
+    {% if FEED_ALL_RSS %}
+    <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Full RSS Feed" />
+    {% endif %}
+    {% if FEED_ATOM %}
+    <link href="{{ FEED_DOMAIN }}/{{ FEED_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Atom Feed" />
+    {% endif %}
+    {% if FEED_RSS %}
+    <link href="{{ FEED_DOMAIN }}/{{ FEED_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
+    {% endif %}
+    {% if CATEGORY_FEED_ATOM and category %}
+    <link href="{{ FEED_DOMAIN }}/{{ CATEGORY_FEED_ATOM.format(slug=category.slug) }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Categories Atom Feed" />
+    {% endif %}
+    {% if CATEGORY_FEED_RSS and category %}
+    <link href="{{ FEED_DOMAIN }}/{{ CATEGORY_FEED_RSS.format(slug=category.slug) }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Categories RSS Feed" />
+    {% endif %}
+    {% if TAG_FEED_ATOM and tag %}
+    <link href="{{ FEED_DOMAIN }}/{{ TAG_FEED_ATOM.format(slug=tag.slug) }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Tags Atom Feed" />
+    {% endif %}
+    {% if TAG_FEED_RSS and tag %}
+    <link href="{{ FEED_DOMAIN }}/{{ TAG_FEED_RSS.format(slug=tag.slug) }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Tags RSS Feed" />
+    {% endif %}
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/syntax.css" type="text/css" />
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/base16-gruvbox.light.css" type="text/css" />
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/base16-gruvbox.dark.css" type="text/css" media="(prefers-color-scheme: dark)" />
+    <link rel="canonical" href="{{ SITEURL }}/{% if article is defined %}{{ article.url }}{% elif page is defined %}{{ page.url }}{% else %}{{ SITEURL }}{% endif %}">
+    <meta property="og:url" content="{{ SITEURL }}/{% if article is defined %}{{ article.url }}{% elif page is defined %}{{ page.url }}{% else %}{{ SITEURL }}{% endif %}">
+    <meta name="author" content="{{ AUTHOR }}" />
+    <meta name="title" content="{{ self.og_title() }}" />
+    <meta name="description" content="{% block meta_description %}{{ SITEMETA }}{% endblock meta_description %}" />
+    <meta property="og:description" content="{{ self.meta_description() }}">
+    <meta property="og:site_name" content="{{ SITETITLE }}">
+    <meta property="og:title" content="{% block og_title %}{{ SITENAME }}{% endblock og_title %}">
+    <meta property="og:image" content="{% block og_image %}{{ SITEURL }}/{{ LOGO }}{% endblock og_image %}">
+    {% if TWITTER_HANDLE %}
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:creator" content="{{ TWITTER_HANDLE }}">
+    <meta name="twitter:site" content="{{ TWITTER_HANDLE }}">
+    {% endif %}
+    {%- endblock head %}
 </head>
-
 <body>
-    <section class="container">
-        <header class="jumbotron">
-            <div class="row">
-                <div class="col-sm-4">
-                    <img src="{{ SITEURL }}/theme/me.jpg" class="rounded">
-                    <h1 class="display-4">
-                        <a href="{{ SITEURL }}/">{{ SITENAME }} <strong>{{ SITESUBTITLE }}</strong></a>
-                    </h1>
-                </div>
-                <div class="col-sm-8">
-                <div class="text-right">
-                    {% for name, link in SOCIAL %}
-                        <div class="d-inline-block social-link text-center">
-                            <a href="{{ link }}">
-                            <div>{{ name }}</div>
-                            <img src="{{ SITEURL }}/theme/icons/{{ name }}.png" class="social-icon">
-                            </a>
-                        </div>
-                    {% endfor %}
-                </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-6 col-xs-12">
-                    <p class="lead">Just some ramblings that might be useful</p>
-                </div>
-                <div class="col-sm-6 col-xs-12">
-                    <div class="row">
-                        <div class="col-sm-6 col-xs-12">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <hr class="my-4">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <ul class="nav nav-pills">
-                        {% if DISPLAY_PAGES_ON_MENU %}
-                            {% for p in pages %}
-                                <li class="nav-item">
-                                    <a href="{{ SITEURL }}/{{ p.url }}" class="nav-link {% if output_file == p.save_as %} active {% endif %}">{{ p.title }}</a>
-                                </li>
-                            {% endfor %}
-                        {% endif %}
-                        {% if DISPLAY_CATEGORIES_ON_MENU %}
-                            <li class="nav-item">
-                                <a href="{{ SITEURL }}/category/blog/page/1/" class="nav-link {% if 'category/blog' in output_file or (article and article.category == 'Blog') %} active {% endif %}">Blog</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{ SITEURL }}/category/review/page/1/" class="nav-link {% if 'category/review' in output_file or (article and article.category == 'Review') %} active {% endif %}">Reviews</a>
-                            </li>
-                        {% endif %}
-                    </ul>
-                </div>
-            </div>
-        </header>
-        <section>
-            {% block content %}
-            {% endblock %}
-        </section>
-    </section>
-</body>
+    <aside id="asidebar">
+        <div id="logo">
+            <a href="{{ SITEURL }}/"><img src="{{ SITEURL }}/{{ LOGO }}" alt="{{ SITENAME }} logo" /></a>
+        </div>
+        <nav id="main-menu">
+            {% include 'partials/main_nav.html' %}
+        </nav>
+        <div id="social">
+            {% include 'partials/social.html' %}
+        </div>
+    </aside>
+    <main>
+        {%- block content -%}{%- endblock %}
 
+        {% if DISPLAY_FOOTER or DISPLAY_FOOTER is not defined %}
+        <footer>
+            {% include 'partials/copyright.html' %}
+        </footer>
+        {% endif %}
+    </main>
+</body>
 </html>

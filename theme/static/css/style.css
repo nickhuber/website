@@ -1,0 +1,404 @@
+@font-face {
+  font-family: "Lora";
+  src: url("/theme/fonts/Lora/Lora-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Lora";
+  src: url("/theme/fonts/Lora/Lora-Italic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic; }
+
+@font-face {
+  font-family: "Lora";
+  src: url("/theme/fonts/Lora/Lora-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal; }
+
+#asidebar, main {
+  max-width: 1050px;
+  margin: auto;
+  padding: 0 30px; }
+
+code, pre {
+  font-family: Consolas, Monaco, Menlo, "Courier New", monospace; }
+
+.docinfo {
+  display: none; }
+
+article.intro section p {
+  margin: 0; }
+
+article > header > p {
+  margin: 0;
+  font-size: inherit; }
+
+#asidebar {
+  display: grid;
+  grid: "a b" "a c";
+  justify-content: start; }
+  #asidebar #logo {
+    margin: 30px 20px 30px 0;
+    grid-area: a; }
+  #asidebar #main-menu {
+    grid-area: b;
+    align-self: end; }
+  #asidebar #social {
+    grid-area: c;
+    align-self: start; }
+
+#social ul,
+#main-menu ul {
+  margin: 0;
+  padding: 0; }
+  #social ul li,
+  #main-menu ul li {
+    margin: 0;
+    padding: 0 0 0 0;
+    list-style: none;
+    display: inline; }
+    #social ul li a,
+    #main-menu ul li a {
+      text-decoration: none;
+      position: relative;
+      padding: 10px;
+      background: none;
+      white-space: nowrap;
+      display: inline-flex; }
+    #social ul li a:after,
+    #main-menu ul li a:after {
+      content: "";
+      position: absolute;
+      height: 2px;
+      bottom: 7px;
+      left: 10px;
+      right: 10px;
+      background-color: #1d2021;
+      visibility: hidden;
+      transform: scaleX(0);
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+      @media (prefers-color-scheme: dark) {
+        #social ul li a:after,
+        #main-menu ul li a:after {
+          background-color: #ebdbb2; } }
+    #social ul li a:hover,
+    #main-menu ul li a:hover {
+      text-decoration: none; }
+    #social ul li a:hover:after,
+    #main-menu ul li a:hover:after {
+      visibility: visible;
+      transform: scaleX(1); }
+
+#logo {
+  height: 72px;
+  width: 72px; }
+  #logo a {
+    background: none; }
+  #logo img {
+    border-radius: 8px; }
+
+#social svg.fa-gitlab {
+  color: #af3a03; }
+  @media (prefers-color-scheme: dark) {
+    #social svg.fa-gitlab {
+      color: #fe8019; } }
+
+#social svg.fa-github {
+  color: #282828; }
+  @media (prefers-color-scheme: dark) {
+    #social svg.fa-github {
+      color: #fbf1c7; } }
+
+#social svg.fa-bitbucket {
+  color: #076678; }
+  @media (prefers-color-scheme: dark) {
+    #social svg.fa-bitbucket {
+      color: #458588; } }
+
+/******************************************************************************/
+/* stolen from docutils html5_polygot minimal.css                             */
+dl.field-list > dt,
+dl.option-list > dt,
+dl.docinfo > dt,
+dl.footnote > dt,
+dl.citation > dt {
+  clear: left;
+  float: left;
+  margin: 0;
+  padding: 0; }
+
+dl.footnote.superscript > dd {
+  margin-left: 1em; }
+
+dl > dt.label {
+  font-weight: normal; }
+
+a.footnote-reference.superscript,
+dl.footnote.superscript > dt.label {
+  line-height: 100%;
+  vertical-align: super; }
+
+dt.label > span.fn-backref {
+  margin-left: 0.2em; }
+
+dt.label > span.fn-backref > a {
+  font-style: italic; }
+
+/******************************************************************************/
+/* lawler.io stuff, because I stole his pelican theme                         */
+.copyright {
+  font-size: 1rem; }
+
+article > footer {
+  text-align: right; }
+  article > footer > p {
+    margin: 0;
+    font-size: 1.2rem; }
+
+/******************************************************************************/
+/* tufte-like stuff, see https://edwardtufte.github.io/tufte-css/             */
+html {
+  font-size: 15px; }
+
+body {
+  padding: 0;
+  margin: auto;
+  background-color: #fffff8;
+  color: #1d2021;
+  font-size: inherit;
+  font-family: Lora, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif; }
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #1d2021;
+      color: #ebdbb2; } }
+
+p.subtitle {
+  font-style: italic;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  display: block;
+  line-height: 1; }
+
+p {
+  margin-top: 1.4rem;
+  margin-bottom: 1.4rem;
+  padding-right: 0;
+  vertical-align: baseline; }
+
+.numeral {
+  font-family: Lora; }
+
+.de-emphasize {
+  color: #928374; }
+
+.newthought {
+  font-variant: small-caps;
+  font-size: 1.2em; }
+
+p, ol, ul {
+  font-size: 1.4rem;
+  line-height: 2rem; }
+
+li:not(:first-child) {
+  margin-top: 0.25rem; }
+
+img {
+  max-width: 100%;
+  margin-bottom: 1.4rem; }
+
+/* normal content vs margins? */
+@media screen and (min-width: 780px) {
+  article > footer,
+  section > p,
+  section > footer,
+  section > table,
+  section > pre.code:not(.fullwidth),
+  section > ol,
+  section > ul,
+  article blockquote p,
+  article blockquote footer,
+  article hr,
+  section > figure.fullwidth > *,
+  section > figure:not(.fullwidth):not(.aside):not(.no-upscale) img,
+  section > a.fullwidth > *,
+  section > a:not(.fullwidth):not(.aside) img,
+  section > img:not(.fullwidth):not(.aside) {
+    width: 60%;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0;
+    margin-right: 0; }
+  section > figure.no-upscale img {
+    max-width: 60%; }
+  section > .aside,
+  section > .sidebar,
+  section > figure:not(.fullwidth):not(.aside) > *:not(:first-child) {
+    float: right;
+    clear: right;
+    width: 33%; }
+  section > ul, section > ol {
+    width: 55%; } }
+
+section > ul, section > ol {
+  padding: 0;
+  margin: 0 0 0 24px; }
+
+.fullwidth {
+  clear: both; }
+
+.aside {
+  margin-bottom: 2rem; }
+
+/* some sizing and stuff ripped from tufte-css */
+article {
+  padding: 1rem 0rem; }
+
+section {
+  padding-top: 1rem;
+  padding-bottom: 1rem; }
+
+h1, h2, h3 {
+  font-weight: 400;
+  line-height: 1; }
+
+h1 {
+  margin-top: 4rem;
+  margin-bottom: 1.5rem;
+  font-size: 3.2rem; }
+
+h2 {
+  font-style: italic;
+  margin-top: 2.1rem;
+  margin-bottom: 1.4rem;
+  font-size: 2.2rem; }
+
+h3 {
+  font-style: italic;
+  font-size: 1.7rem;
+  margin-top: 2rem;
+  margin-bottom: 1.4rem; }
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0; }
+
+/* Links: replicate underline that clears descenders */
+a:link,
+a:visited {
+  color: inherit; }
+
+@media (prefers-color-scheme: dark) {
+  a:link::selection,
+  a:link::-moz-selection {
+    background: #076678; } }
+
+a.image-reference {
+  background: none; }
+
+/* footnotes & sidenotes/asides? */
+a.footnote-reference,
+a.fn-backref {
+  font-size: 1rem;
+  color: #d65d0e;
+  font-family: Lora; }
+
+@media screen and (min-width: 780px) {
+  .footnote > .aside {
+    float: right;
+    clear: both;
+    position: relative;
+    right: 34%;
+    height: 0; }
+  .footnote > .aside + * {
+    float: right;
+    clear: both;
+    width: 33%; } }
+
+.footnote p,
+.aside,
+.sidebar,
+figure > figcaption {
+  font-size: 1.1rem;
+  line-height: 1.3; }
+
+.footnote > .aside + * > p,
+p.aside {
+  margin-top: 0; }
+
+/* figures */
+figure {
+  margin: 0; }
+
+/* blockquotes */
+blockquote {
+  font-size: 1.4rem; }
+
+blockquote footer {
+  font-size: 1.1rem;
+  text-align: right; }
+
+/* epigraphs */
+.epigraph {
+  margin-top: 3em;
+  margin-bottom: 3em; }
+
+.epigraph,
+.epigraph > p {
+  font-style: italic; }
+
+.epigraph > .attribution {
+  font-style: normal; }
+
+.epigraph > .attribution > cite {
+  font-style: italic; }
+
+/* codes */
+code, .code {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 1.0rem;
+  line-height: 1.42; }
+
+pre.code {
+  font-size: 0.9rem;
+  overflow-x: auto; }
+
+h1 > code,
+h2 > code,
+h3 > code {
+  font-size: 0.80em; }
+
+.sans {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+  letter-spacing: .03em; }
+
+.sans > code {
+  font-size: 1.2rem; }
+
+.aside > code,
+.footnote > .aside + * code {
+  font-size: 0.9rem; }
+
+/* printy time */
+@media print {
+  * {
+    background: #fff; }
+  main > article {
+    padding-top: 0; }
+  main {
+    width: 100%;
+    padding: 0; }
+  #asidebar {
+    display: none; }
+  img {
+    break-inside: avoid; }
+  p, table, pre {
+    widows: 3;
+    orphans: 3; }
+  h1, h2, h3, h4, h5, h6 {
+    break-after: avoid; } }

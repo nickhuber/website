@@ -2,7 +2,7 @@ Rage 2
 =======
 
 :date: 2019-11-25
-:category: Review
+:category: Reviews
 :slug: rage-2
 :summary: 5/10 - Uninspired and repetitive
 

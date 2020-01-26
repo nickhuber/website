@@ -27,6 +27,8 @@ I am very happy with how it works right now, and am looking forward to adding
 more features to it. It is my first project that I have actually managed to get
 users for, even if it is just my friends.
 
+It is somewhat reliably online at https://pact.nickhuber.ca/.
+
 Youtube stats
 --------------
 

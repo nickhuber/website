@@ -2,7 +2,7 @@ The Outer Worlds
 =================
 
 :date: 2019-11-02
-:category: Review
+:category: Reviews
 :slug: the-outer-worlds
 :summary: 7/10 - A unique world that doesn't quite meet its potential
 

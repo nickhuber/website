@@ -3,14 +3,18 @@
 from __future__ import unicode_literals
 
 AUTHOR = 'Nick Huber'
-SITENAME = "Nick Huber"
+SITENAME = "Nick's blog"
 SITEURL = ''
 
 PATH = 'content'
 
+DATE_FORMATS = {"en": "%A, %-d %B %Y"}
+
 TIMEZONE = 'America/Vancouver'
 
 DEFAULT_LANG = 'en'
+
+DOCUTILS_SETTINGS = {"smart_quotes": True, "footnote_references": "superscript"}
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
@@ -19,15 +23,7 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
-STATIC_PATHS = [
-    'images',
-    'extra',
-]
-
-EXTRA_PATH_METADATA = {
-    'extra/robots.txt': {'path': 'robots.txt'},
-    'extra/favicon.ico': {'path': 'favicon.ico'},
-}
+LOGO = "theme/logo.jpg"
 
 # Blogroll
 LINKS = ()
