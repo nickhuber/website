@@ -2,17 +2,20 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
-AUTHOR = 'Nick Huber'
+AUTHOR = "Nick Huber"
 SITENAME = "Nick's blog"
-SITEURL = ''
+SITEURL = ""
 
-PATH = 'content'
+PATH = "content"
+
+PLUGIN_PATHS = ["."]
+PLUGINS = ["pelext"]
 
 DATE_FORMATS = {"en": "%A, %-d %B %Y"}
 
-TIMEZONE = 'America/Vancouver'
+TIMEZONE = "America/Vancouver"
 
-DEFAULT_LANG = 'en'
+DEFAULT_LANG = "en"
 
 DOCUTILS_SETTINGS = {"smart_quotes": True, "footnote_references": "superscript"}
 
@@ -30,16 +33,17 @@ LINKS = ()
 
 # Social widget
 SOCIAL = (
-    ('github', 'https://github.com/nickhuber/'),
-    ('bitbucket', 'https://bitbucket.com/nhuber/'),
-    ('youtube', 'https://www.youtube.com/channel/UCYFRJqnrSddXDQCKOZbPd7g'),
+    ("github", "https://github.com/nickhuber/"),
+    ("bitbucket", "https://bitbucket.com/nhuber/"),
+    ("youtube", "https://www.youtube.com/channel/UCYFRJqnrSddXDQCKOZbPd7g"),
 )
 
 DEFAULT_PAGINATION = 10
 PAGINATION_PATTERNS = (
-    (1, '{base_name}/page/{number}/', '{base_name}/page/{number}/index.html'),
+    (1, '{url}', '{save_as}'),
+    (2, '{base_name}/page/{number}/', '{base_name}/page/{number}/'),
 )
-THEME = './theme'
+THEME = "./theme"
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True

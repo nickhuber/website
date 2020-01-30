@@ -5,6 +5,7 @@ Using Tasker and intents to play Google Play Music when you start driving
 :modified: 2019-09-19
 :category: Blog
 :slug: intents-tasker-google-play-music-for-car
+:tags: automation
 :summary:
     What is needed to automatically play music from your phone when connecting
     to a bluetooth device.

@@ -4,6 +4,7 @@ Debian "LTS" rant
 :date: 2019-06-04
 :category: Blog
 :slug: debian-lts-rant
+:tags: linux, debian
 :summary: Just some late complaining about a recent Debian change
 
 Debian has extended support for some of their recent releases for people that

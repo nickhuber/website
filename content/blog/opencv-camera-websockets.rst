@@ -4,6 +4,7 @@ Using Python, OpenCV and websockets for camera frames
 :date: 2019-09-10
 :category: Blog
 :slug: python-opencv-camera-websockets
+:tags: programming
 :summary: A simple python script to read and communicate camera data
 
 For starters, I'm using a Raspberry Pi 2 with the camera module V2. For the

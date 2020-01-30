@@ -4,6 +4,7 @@ This website
 :date: 2019-05-18
 :category: Blog
 :slug: this-site
+:tags: meta
 :summary: What is going on with this website?
 
 I decided to use Pelican_ for this blog since I

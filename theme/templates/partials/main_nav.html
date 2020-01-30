@@ -13,7 +13,7 @@
 
     {% if DISPLAY_CATEGORIES_ON_MENU %}
       {% for cat, null in categories %}
-        <li{% if cat == category %} class="active"{% endif %}><a href="{{ SITEURL }}/category/{{ cat | lower }}/page/1/">{{ cat }}</a></li>
+        <li{% if cat == category %} class="active"{% endif %}><a href="{{ SITEURL }}/category/{{ cat | lower }}/">{{ cat }}</a></li>
       {% endfor %}
     {% endif %}
 </ul>

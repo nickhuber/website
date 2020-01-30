@@ -19,13 +19,9 @@
                 </section>{% endif %}
 
                 <footer class="de-emphasize">
-                    <p>Written
-                       at {{ article.date.strftime("%H:%M") }}
-                       on  {{ article.locale_date }}
+                    <p>Written {{ article.locale_date }}
                     {% if article.modified %}
-                    <p>Modified
-                       at {{ article.modified.strftime("%H:%M") }}
-                       on {{ article.locale_modified }}.
+                    <p>Modified {{ article.locale_modified }}.
                     {% endif %}
                     {%- if article.tags %}
                     <p>Tagged with
