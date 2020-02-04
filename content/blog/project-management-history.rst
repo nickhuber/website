@@ -1,13 +1,14 @@
-The history of project management at Multapplied Networks
-==========================================================
+My experience with project management
+======================================
 
 :date: 2020-02-02
+:modified: 2020-02-03
 :category: Blog
 :tags: project management, history
-:slug: multapplied-networks-project-management-history
+:slug: project-management-history
 :summary:
-    A somewhat brief overview of how Multapplied Networks has done project
-    management for the software development team.
+    A somewhat brief overview of how I have seen project management done and
+    how it has evolved.
 
 
 The beginning
@@ -52,32 +53,30 @@ For many years this worked fine. The project was spearheaded by my only other
 co-worker and things grew slowly. We added a few new developers and some sales
 people and things started to pick up steam. At this point in time we started to
 change our focus into what the industry would start to coin "SD-WAN". We all of
-a sudden had a big feature on our hands, one that we would call "Private WAN". In
-essence, Private WAN is a way to have have a secure, private connection using
-public internet connections to specific other sites as well as highly-available
-gateways that are able to be geographically diverse. A long time was spent
-planning this feature and during development problems were found and things had
-to be changed. Things had to be changed multiple times.
+a sudden had a big feature on our hands. A long time was spent planning this
+feature and during development problems were found and things had to be
+changed. Things had to be changed multiple times.
 
 .. class:: aside
 .. [#]
 
-    In 2020, we are still redoing parts of the original implementation.
+    In 2020, we are still modifying parts of the original implementation.
 
-We eventually did release private WAN, and it has gotten more use than any
-other feature outside of the core component, link aggregation. What it ended up
-being released as differed quite a bit from the original plan and much time
-would have be spent fixing up some assumptions that were made in the original
-plan [#]_. No other feature single-handedly added as much technical debt into
-our product. From this point on, nearly every feature had a significantly
-increased complexity with much less certainty in how it should be implemented
-when brought forward by the people in charge of the business. I consider this
-to be first turning point of how we managed our project.
+We eventually did release our SD-WAN implementation, and it has gotten more use
+than any other feature outside of the core component, link aggregation. What it
+ended up being released as differed quite a bit from the original plan and much
+time would have be spent fixing up some assumptions that were made in the
+original plan [#]_. No other feature single-handedly added as much technical
+debt into our product. From this point on, nearly every feature had a
+significantly increased complexity with much less certainty in how it should be
+implemented when brought forward by the people in charge of the business. I
+consider this to be first turning point of how we managed our project.
 
 .. class:: aside
 
-    I don't remember if this was before or after the private WAN feature, but
-    even it was before we weren't properly following it at that point in time.
+    I don't remember if this was before or after the initial pivot into full
+    SD-WAN features, but even it was before we weren't properly following it at
+    that point in time.
 
 We went to a seminar about using scrum for project management where we played
 with all the stereotypical things like sticky notes in swim lanes and assigning
@@ -90,10 +89,10 @@ Scrum, and how it didn't quite work for us
 At the beginning scrum seemed great. We could just plan a bit ahead of where we
 were and hopefully spend less time planning months of features all in one go.
 The business didn't quite let us adhere to it perfectly though. At this point
-in time at Multapplied Networks, the software development team was also the
-technical support team. This made the number of hours the development team
-could spend every scrum period (we did 2 weeks) very variable, which conflicts
-with some of the core concepts of scrum of getting very predictable work loads.
+in time, the software development team was also the technical support team.
+This made the number of hours the development team could spend every scrum
+period (we did 2 weeks) very variable, which conflicts with some of the core
+concepts of scrum of getting very predictable work loads.
 
 .. class:: aside
 
@@ -177,6 +176,7 @@ from the nearly decade-old codebase crept up and complicated matters.
 
 .. class:: aside
 .. [#]
+
     https://nvd.nist.gov/vuln/detail/CVE-2019-14899
 
 With a smaller set of planned work we are able to still follow Kanban enough
@@ -220,7 +220,7 @@ Our general process goes something like this:
 .. class:: aside
 .. [#]
 
-    Did you know the "R" in R&D stood for research?
+    Did you know the "R" in R&D stands for research?
 
 From the project manager to the development team everyone seems happy with this
 current process. We spend less time planning out features that eventually get
