@@ -19,6 +19,11 @@ DEFAULT_LANG = "en"
 
 DOCUTILS_SETTINGS = {"smart_quotes": True, "footnote_references": "superscript"}
 
+ARTICLE_URL = "{category}/{slug}/"
+ARTICLE_SAVE_AS = "{category}/{slug}/index.html"
+CATEGORY_URL = "{slug}/"
+CATEGORY_SAVE_AS ="{slug}/index.html"
+
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None

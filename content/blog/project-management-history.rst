@@ -2,7 +2,7 @@ My experience with project management
 ======================================
 
 :date: 2020-02-02
-:modified: 2020-02-03
+:modified: 2020-02-04
 :category: Blog
 :tags: project management, history
 :slug: project-management-history
@@ -55,7 +55,7 @@ people and things started to pick up steam. At this point in time we started to
 change our focus into what the industry would start to coin "SD-WAN". We all of
 a sudden had a big feature on our hands. A long time was spent planning this
 feature and during development problems were found and things had to be
-changed. Things had to be changed multiple times.
+changed. *Things had to be changed multiple times*.
 
 .. class:: aside
 .. [#]
@@ -113,7 +113,6 @@ development with more still being added.
 In come the yes-men
 --------------------
 
-
 .. class:: aside
 .. [#]
 
@@ -149,8 +148,7 @@ of time undoing everything they proposed we add to our processes and tooling.
 
 One good thing to come from this is we just gave up on our old project with
 years worth of planned work and made a new one, although it did start to grow
-until we got more strict about things, which brings us too...
-
+until we got more strict about things, which brings us to…
 
 Weighted Kanban
 ----------------
