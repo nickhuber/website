@@ -16,10 +16,6 @@ it seemed overkill to have docker running around it using over 100MB.
 
 I cloned the repository, checked out the latest tag and then ran
 
-.. class:: aside
-
-    This may take a while.
-
 .. code-block:: bash
 
     cargo build --release --features sqlite
@@ -67,12 +63,6 @@ and then enabled and ran it with `systemctl enable --now bitwarden.service`
 Then you just need to have a web server to run it, preferably with some SSL
 support. This is how my nginx configuration looks for it.
 
-.. class:: aside
-
-    I made some extra conf files that all my domains source for nginx to easily
-    manage Let's Encrypt and SSL settings but maybe I'll talk about that
-    another day.
-
 .. code-block:: nginx
 
     server {
@@ -106,6 +96,12 @@ support. This is how my nginx configuration looks for it.
                     proxy_pass http://localhost:8000/;
             }
     }
+
+.. class:: aside
+
+    I made some extra conf files that all my domains source for nginx to easily
+    manage Let's Encrypt and SSL settings but maybe I'll talk about that
+    another day.
 
 And now it should be done. Without a lot of effort you have saved yourself the
 hassle of running a docker container and are saving some precious memory.

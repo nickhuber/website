@@ -22,7 +22,7 @@ add a new task, giving it a name. In the lower right of this panel click the +
 to begin adding a new action, and select "System" and then "Send Intent". The
 intent information can be gained from this `useful reddit post`_ but what I entered was
 
-.. code::
+.. code-block:: text
 
     Action:android.media.action.MEDIA_PLAY_FROM_SEARCH
     Cat:None
