@@ -5,7 +5,7 @@ Nginx conf file management
 :category: Blog
 :slug: nginx-conf-file-management
 :tags: nginx
-:summary: How i manage multiple virtual host configurations on nginx
+:summary: How I manage multiple virtual host configurations on nginx
 
 I like to host many different domains on a single server, all behind nginx. I
 didn't want to have too much duplicated configuration logic between the various
