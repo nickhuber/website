@@ -2,7 +2,7 @@ My experience with project management
 ======================================
 
 :date: 2020-02-02
-:modified: 2020-02-04
+:modified: 2020-02-15
 :category: Blog
 :tags: project management, history
 :slug: project-management-history
@@ -126,12 +126,12 @@ We ended up getting a consultant that teaches other companies how to do project
 management to help us figure out what we were doing wrong. They went over scrum
 and more generically agile and when we brought up our complaints with scrum
 they agreed, and suggested that scrum isn't the right fit and something that
-allowed for our level of interruptions and changing priorities more. This is
-where we switched to something that was like scrum but less strict. We would
-have our planned work still, and that was never supposed to change. We added a
-new board to our JIRA called "Innovation" [#]_, but it was innovation in name only.
-The innovation board was where every interruption went and ensured that the
-normal planned work board stayed still.
+allowed for our level of interruptions and changing priorities would be more
+well suited. This is where we switched to something that was like scrum but
+less strict. We would have our planned work still, and that was never supposed
+to change. We added a new board to our JIRA called "Innovation" [#]_, but it
+was innovation in name only. The innovation board was where every interruption
+went and ensured that the normal planned work board stayed still.
 
 For a while this seemed like it was working. But after a few months we realized
 it was just scrum with a different coat of paint and our issues spread across 2
