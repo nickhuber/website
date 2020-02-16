@@ -19,9 +19,9 @@
     <meta property="article:section" content="{{ article.category | e }}" />
 {% endblock %}
 
-{% block title %}{{ article.title | e }} | {{ SITENAME }}{% endblock %}
-{% block og_title %}{{ article.title | e }}{% endblock %}
-{% block meta_description %}{{ article.description | e }}{% endblock %}
+{% block title %}{{ article.title | striptags | e }} | {{ SITENAME }}{% endblock %}
+{% block og_title %}{{ article.title | striptags | e }}{% endblock %}
+{% block meta_description %}{{ article.description | striptags | e }}{% endblock %}
 
 {% block content %}
 {% include "partials/article_body.html" %}

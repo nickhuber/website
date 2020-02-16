@@ -66,7 +66,7 @@ publish: theme/static/css/style.css
 theme/static/css:
 	mkdir -p theme/static/css
 
-theme/static/css/style.css: theme/static/css
+theme/static/css/style.css: theme/static/css theme/style.sass
 	sassc theme/style.sass theme/static/css/style.css
 
 .PHONY: html help clean regenerate serve devserver stopserver publish

@@ -4,19 +4,19 @@
     <meta name="robots" content="noindex" />
 {%- endblock %}
 
-{% block title %}Writings tagged "{{ tag }}" {% if articles_page.number != 1 %} | Page {{ articles_page.number }}{% endif %} | {{ SITENAME }}{% endblock %}
+{% block title %}Content tagged "{{ tag }}" {% if articles_page.number != 1 %} | Page {{ articles_page.number }}{% endif %} | {{ SITENAME }}{% endblock %}
 
 {% block content %}
     <article class="intro">
-        <header><h1>Writings tagged <em>{{ tag }}</em></h1>
+        <header><h1>Content tagged <em>{{ tag }}</em></h1>
             <p><span class="newthought">See also: <a href="{{ SITEURL }}/tags/">all tags</a></span>
         </header>
-        <section>
-            {% for article in articles %}
-
-            <p class="list"><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a><br><em>{{ article.locale_date }}</em><br>{{ article.description }}
-            </p>
-            {% endfor %}
-        </section>
+        {% for article in articles %}
+            <section>
+                <p><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+                <p><em>{{ article.locale_date }}</em>
+                {{ article.summary }}
+            </section>
+        {% endfor %}
     </article>
 {% endblock %}}
