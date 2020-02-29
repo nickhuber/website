@@ -97,11 +97,10 @@ support. This is how my nginx configuration looks for it.
             }
     }
 
-.. class:: aside
+.. class:: comment
 
     I made some extra conf files that all my domains source for nginx to easily
-    manage Let's Encrypt and SSL settings but maybe I'll talk about that
-    another day.
+    manage Let's Encrypt and SSL settings, see `my blog post`_ about it.
 
 And now it should be done. Without a lot of effort you have saved yourself the
 hassle of running a docker container and are saving some precious memory.
@@ -109,3 +108,4 @@ hassle of running a docker container and are saving some precious memory.
 .. _`bitwarden-rs`: https://github.com/dani-garcia/bitwarden_rs
 .. _Vultr: https://www.vultr.com/?ref=7515314
 .. _`web vault releases`: https://github.com/dani-garcia/bw_web_builds/releases
+.. _`my blog post`: /blog/nginx-conf-file-management/

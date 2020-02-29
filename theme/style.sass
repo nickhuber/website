@@ -16,7 +16,7 @@
   font-weight: bold
   font-style: normal
 
-#asidebar, main
+#navbar, main
   max-width: 1050px
   margin: auto
   padding: 0 30px
@@ -37,7 +37,7 @@ article > header > p
   margin: 0
   font-size: inherit
 
-#asidebar
+#navbar
   display: grid
   grid: "a b" "a c"
   justify-content: start
@@ -155,8 +155,8 @@ dt.label > span.fn-backref > a
 article > footer
   text-align: right
   > p
-    margin: 0;
-    font-size: 1.2rem;
+    margin: 0
+    font-size: 1.2rem
 
 /******************************************************************************/
 /* tufte-like stuff, see https://edwardtufte.github.io/tufte-css/             */
@@ -213,40 +213,6 @@ img
   // margin-top: 1.4rem
   margin-bottom: 1.4rem
 
-/* normal content vs margins? */
-@media screen and (min-width: 780px)
-  article > footer,
-  section > p,
-  section > footer,
-  section > table,
-  section > pre.code:not(.fullwidth),
-  section > ol,
-  section > ul,
-  article blockquote p,
-  article blockquote footer,
-  article hr,
-  // I'd use img but I don't know if the figure content is always an
-  // img/iframe/svg/object?
-  section > figure.fullwidth > *,
-  section > figure:not(.fullwidth):not(.aside):not(.no-upscale) img,
-  section > a.fullwidth > *,
-  section > a:not(.fullwidth):not(.aside) img,
-  section > img:not(.fullwidth):not(.aside)
-    width: 60%
-    padding-left: 0
-    padding-right: 0
-    margin-left: 0
-    margin-right: 0
-  section > figure.no-upscale img
-    max-width: 60%
-
-  section > .aside,
-  section > .sidebar,
-  section > figure:not(.fullwidth):not(.aside) > *:not(:first-child)
-    float: right
-    clear: right
-    width: 33%
-
   section > ul, section> ol
     // Width is narrower for this guy because he has a left margin ...
     width: 55%
@@ -257,9 +223,6 @@ section > ul, section> ol
 
 .fullwidth
   clear: both // TODO what does this do?
-
-.aside
-  margin-bottom: 2rem
 
 /* some sizing and stuff ripped from tufte-css */
 article
@@ -303,11 +266,6 @@ a:link,
 a:visited
   color: inherit
 
-// TODO what the fuck is this?
-// @media screen and (-webkit-min-device-pixel-ratio: 0)
-//   a:link
-//     background-position-y: 87%, 87%, 87%
-
 // softer background color for selected links for some reason I guess?
 a:link::selection,
 a:link::-moz-selection
@@ -330,21 +288,13 @@ a.fn-backref
  *   <dt id="..." class="aside label">..</dt>
  *   <dd>...</dd>
  * </dl> */
-@media screen and (min-width: 780px)
-  .footnote > :not(.label)
-    width: 60%
-  .footnote > .aside.label
-    // this is very scetchy ...
-    float: right
-    clear: both
-    position: relative
-    right: 34%
-    height: 0
 
-  .footnote > .aside.label + *,
-    float: right
-    clear: both
-    width: 33%
+@media screen and (min-width: 780px)
+  .comment
+    color: gray
+    width: 50%
+    position: relative
+    left: 50%
 
 .footnote p,
 .aside,
@@ -363,7 +313,7 @@ figure
 
 /* blockquotes */
 blockquote
-  font-size: 1.4rem;
+  font-size: 1.4rem
 
 blockquote footer
  font-size: 1.1rem
@@ -424,7 +374,7 @@ h3 > code
     width: 100%
     padding: 0
 
-  #asidebar
+  #navbar
     display: none
 
   img

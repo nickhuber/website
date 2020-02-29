@@ -14,13 +14,6 @@ My experience with project management
 The beginning
 --------------
 
-.. class:: aside
-.. [#]
-
-    We worked closely with a Dutch ISP with similar goals, Kliksafe, to provide
-    either white or blacklist access to certain websites. The city I live in
-    has a fairly significant Dutch populace.
-
 Around 8 years ago a friend helped me get a job doing technical support for a
 filtered ISP [#]_ that also did managed services, and I would eventually pivot
 into my true calling as a software developer. After half a year or so of doing
@@ -32,12 +25,11 @@ secondary school and had never been involved with something I hadn't started.
 At that point in time I worked on whatever features or bugs were assigned to me
 and helped provide support to the few clients we had.
 
-.. class:: aside
 .. [#]
 
-   I'm sure many projects start off as waterfall as the project is small enough
-   to keep the whole thing in hand and features are simple like "Add a DHCP
-   server configuration"
+        We worked closely with a Dutch ISP with similar goals, Kliksafe, to provide
+        either white or blacklist access to certain websites. The city I live in
+        has a fairly significant Dutch populace.
 
 I had heard of and studied some different software development patterns, but
 never worked on something big enough to really be classified as any of them.
@@ -45,6 +37,12 @@ Looking back at this part of the company, the closest way to categorize it would
 be as waterfall [#]_, except the features were kept small so we were able to do
 multiple releases a year. Adding support for things like NAT, quality of
 service, encryption and more.
+
+.. [#]
+
+   I'm sure many projects start off as waterfall as the project is small enough
+   to keep the whole thing in hand and features are simple like "Add a DHCP
+   server configuration"
 
 Growth and the pains that come with it
 ---------------------------------------
@@ -57,11 +55,6 @@ a sudden had a big feature on our hands. A long time was spent planning this
 feature and during development problems were found and things had to be
 changed. *Things had to be changed multiple times*.
 
-.. class:: aside
-.. [#]
-
-    In 2020, we are still modifying parts of the original implementation.
-
 We eventually did release our SD-WAN implementation, and it has gotten more use
 than any other feature outside of the core component, link aggregation. What it
 ended up being released as differed quite a bit from the original plan and much
@@ -72,16 +65,20 @@ significantly increased complexity with much less certainty in how it should be
 implemented when brought forward by the people in charge of the business. I
 consider this to be first turning point of how we managed our project.
 
-.. class:: aside
+.. [#]
 
-    I don't remember if this was before or after the initial pivot into full
-    SD-WAN features, but even it was before we weren't properly following it at
-    that point in time.
+    In 2020, we are still modifying parts of the original implementation.
 
 We went to a seminar about using scrum for project management where we played
 with all the stereotypical things like sticky notes in swim lanes and assigning
 story points to things based on the fibonacci numbers. We adopted the parts of
 it we could and officially adopted Scrum.
+
+.. class:: comment
+
+    I don't remember if this was before or after the initial pivot into full
+    SD-WAN features, but even it was before we weren't properly following it at
+    that point in time.
 
 Scrum, and how it didn't quite work for us
 -------------------------------------------
@@ -94,7 +91,7 @@ This made the number of hours the development team could spend every scrum
 period (we did 2 weeks) very variable, which conflicts with some of the core
 concepts of scrum of getting very predictable work loads.
 
-.. class:: aside
+.. class:: comment
 
     This was quite a while ago now, maybe around 2015 or 2016 so I'm not sure
     how accurate this information will be.
@@ -113,15 +110,6 @@ development with more still being added.
 In come the yes-men
 --------------------
 
-.. class:: aside
-.. [#]
-
-    I think the original intention would be that if we finished everything in a
-    scrum sprint earlier, that we would use that time to work on more
-    experimental or less defined features. It seems now to encourage only doing
-    this type of work if you happened to underestimate the current week's
-    stories.
-
 We ended up getting a consultant that teaches other companies how to do project
 management to help us figure out what we were doing wrong. They went over scrum
 and more generically agile and when we brought up our complaints with scrum
@@ -133,12 +121,20 @@ to change. We added a new board to our JIRA called "Innovation" [#]_, but it
 was innovation in name only. The innovation board was where every interruption
 went and ensured that the normal planned work board stayed still.
 
+.. [#]
+
+    I think the original intention would be that if we finished everything in a
+    scrum sprint earlier, that we would use that time to work on more
+    experimental or less defined features. It seems now to encourage only doing
+    this type of work if you happened to underestimate the current week's
+    stories.
+
 For a while this seemed like it was working. But after a few months we realized
 it was just scrum with a different coat of paint and our issues spread across 2
 projects making it harder for everyone involved to exactly tell what was going
 on.
 
-.. class:: aside
+.. class:: comment
 
     I never realized how easily it is to fall into this "yes-man" trap.
 
@@ -172,23 +168,14 @@ task gets over a week of time logged against I know that something went wrong
 in planning. Maybe we needed to spend more time researching or maybe something
 from the nearly decade-old codebase crept up and complicated matters.
 
-.. class:: aside
-.. [#]
-
-    https://nvd.nist.gov/vuln/detail/CVE-2019-14899
-
 With a smaller set of planned work we are able to still follow Kanban enough
 that we can be reactive to changes in the landscape, whether its a problem
 discovered in our software, a problem discovered in our domain [#]_, or an exciting
 new feature.
 
-.. class:: aside
 .. [#]
 
-    Time estimates are the single-hardest part of my job to get right. Breaking
-    down complicated features into smaller sub-features is sometimes the best
-    you can do. At least then you are probably slightly less wrong on a bunch
-    of smaller things.
+    https://nvd.nist.gov/vuln/detail/CVE-2019-14899
 
 With the current system we now don't plan too far ahead and always try to have
 enough research done for upcoming features that we can roughly estimate [#]_
@@ -196,10 +183,12 @@ what is involved in many features. We still get it wrong but I think that you
 always will. With our new approach we can tell that we got it wrong much
 earlier to let the business figure out how to handle it earlier into development.
 
-.. class:: aside
 .. [#]
 
-    We have an ordered list of features that we work our way through.
+    Time estimates are the single-hardest part of my job to get right. Breaking
+    down complicated features into smaller sub-features is sometimes the best
+    you can do. At least then you are probably slightly less wrong on a bunch
+    of smaller things.
 
 Our general process goes something like this:
 
@@ -214,13 +203,17 @@ Our general process goes something like this:
 #. We further break out and plan features as they get to the top of the list of
    requested features
 
-
-.. class:: aside
 .. [#]
 
-    Did you know the "R" in R&D stands for research?
+    We have an ordered list of features that we work our way through, although
+    new requests often find themselves as the new #1.
+
 
 From the project manager to the development team everyone seems happy with this
 current process. We spend less time planning out features that eventually get
 cancelled and more time researching [#]_ ways to improve our product or better
 implement features.
+
+.. [#]
+
+    Did you know the "R" in R&D stands for research?

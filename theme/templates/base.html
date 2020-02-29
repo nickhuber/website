@@ -49,7 +49,7 @@
     {%- endblock head %}
 </head>
 <body>
-    <aside id="asidebar">
+    <navbar id="navbar">
         <div id="logo">
             <a href="{{ SITEURL }}/"><img src="{{ SITEURL }}/{{ LOGO }}" alt="{{ SITENAME }} logo" /></a>
         </div>
@@ -59,7 +59,7 @@
         <div id="social">
             {% include 'partials/social.html' %}
         </div>
-    </aside>
+    </navbar>
     <main>
         {%- block content -%}{%- endblock %}
 
