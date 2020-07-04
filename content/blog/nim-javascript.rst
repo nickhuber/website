@@ -2,7 +2,7 @@ Using Nim to write JavaScript
 ==============================
 
 :date: 2020-06-28
-:modified: 2020-07-01
+:modified: 2020-07-03
 :category: Blog
 :slug: nim-javascript
 :tags: nim, javascript
@@ -27,7 +27,7 @@ same thing except in Nim. The end result is available as
 
     Nimdecision is a really lame play on "Nim" and "indecision"
 
-There are already framework already for making web pages with Nim, like `karas
+There are already framework for making web pages with Nim, like `karas
 <https://github.com/pragmagic/karax>`_ and `Jester
 <https://github.com/dom96/jester>`_ but I wanted to see what the base language
 was capable of, so decided against using anything outside of the core library.
@@ -45,7 +45,7 @@ on some elements, which I would use as both input and output selectors. Things
 started out simple with using `document.getElementById()` to get the elements
 and updating with the standard JavaScript DOM API. I decided to use an SVG to
 actually render the wheel, and that is where I saw my first major problem. The
-SVG wouldn't render even though it appeared in the DOM just fine. If I edtted
+SVG wouldn't render even though it appeared in the DOM just fine. If I edited
 the DOM in Firefox then the SVG would show up just fine though, even though I
 didn't actually change anything.
 
@@ -74,7 +74,27 @@ before any animation starts. One new thing I used here but haven't used before
 was `CSS custom properties
 <https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties>`_
 which is a really cool way of dynamically adjusting style sheets from
-JavaScript (or Nim, in my case).
+JavaScript (or Nim, in my case). For example
+
+.. code-block:: nim
+
+    var svg = document.getElementById("svg")
+    svg.style.setProperty("--rotationEnd", fmt("{rotation}deg"))
+
+will update the `--rotationEnd` variable defined in the style sheet initially as
+
+.. code-block:: css
+
+    #svg {
+        --rotationEnd: 0deg;
+    }
+
+    @keyframes spin-stop {
+        from { transform:rotate(0deg); }
+        to { transform:rotate(var(--rotationEnd)); }
+    }
+
+to be whatever angle the variable `rotation` is.
 
 Conclusion
 -----------
