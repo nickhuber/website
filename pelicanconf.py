@@ -41,7 +41,6 @@ LINKS = ()
 # Social widget
 SOCIAL = (
     ("github", "https://github.com/nickhuber/"),
-    ("bitbucket", "https://bitbucket.com/nhuber/"),
     ("youtube", "https://www.youtube.com/channel/UCYFRJqnrSddXDQCKOZbPd7g"),
 )
 
