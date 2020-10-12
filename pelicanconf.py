@@ -19,6 +19,7 @@ DEFAULT_LANG = "en"
 
 DOCUTILS_SETTINGS = {"smart_quotes": True, "footnote_references": "superscript"}
 
+STATIC_PATHS = ["images"]
 ARTICLE_URL = "{category}/{slug}/"
 ARTICLE_SAVE_AS = "{category}/{slug}/index.html"
 CATEGORY_URL = "{slug}/"
