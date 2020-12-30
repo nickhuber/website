@@ -89,11 +89,11 @@ article > header > p
       transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)
 
     a:hover
-      text-decoration: none;
+      text-decoration: none
 
     a:hover:after
-      visibility: visible;
-      transform: scaleX(1);
+      visibility: visible
+      transform: scaleX(1)
 
 #logo
   height: 72px
@@ -267,9 +267,9 @@ a:visited
 // softer background color for selected links for some reason I guess?
 a:link::selection,
 a:link::-moz-selection
-  background: #83a598
-  @media not (prefers-color-scheme: dark)
-    background: #076678
+  background: #076678
+  @media (prefers-color-scheme: dark)
+    background: #83a598
 
 a.image-reference
   background: none
@@ -287,7 +287,7 @@ a.fn-backref
     width: 50%
     position: relative
     left: 50%
-    text-align: right;
+    text-align: right
 
 .footnote,
 figure > figcaption,
@@ -321,7 +321,7 @@ blockquote footer
 
 /* codes */
 code, .code, pre
-  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace
   font-size: 1.0rem
   line-height: 1.42
 
@@ -499,7 +499,7 @@ h3 > code
   .se
     color: #666666
     font-weight: bold
-    .sx
+  .sx
     color: #DD2200
   .sr
     color: #000000
