@@ -42,5 +42,7 @@ Joke websites
 
 For some laughs at work I have made some dumb websites.
 
+ - https://flags.nickhuber.ca
+ - https://wheel.nickhuber.ca
  - https://startups.nickhuber.ca
  - https://passwords.nickhuber.ca
