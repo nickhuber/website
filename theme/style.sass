@@ -37,6 +37,17 @@ article > header > p
   margin: 0
   font-size: inherit
 
+table
+  th
+    padding-left: 1em
+    padding-right: 1em
+  td
+    padding-left: 1em
+    padding-right: 1em
+    border-top: 2px solid #eee
+    &:not(:first-child)
+      border-left: 2px solid #eee
+
 #navbar
   display: grid
   grid: "a b" "a c"
