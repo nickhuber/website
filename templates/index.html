@@ -1,0 +1,73 @@
+<%inherit file="base.html"/>
+
+<%block name="stuff">
+
+<main>
+    <article>
+        <header>
+        <h1>
+            <sup>°˖✧◝</sup>
+            <img class="logo" src="${SITE.url}/static/${SITE.logo}" alt="${SITE.logo_alt}"/>
+            <sup>◜✧˖°</sup>
+        </h1>
+        </header>
+
+        <aside><p class="wow-much-social"><%include file="partials/social.html"/></aside>
+
+        ${body}
+    </article>
+
+    <%!
+    def with_new_years(posts):
+        last = None
+        for post in posts:
+            if post['date'].year != last:
+                last = post['date'].year
+                yield last, post
+            else:
+                yield "", post
+    %>
+
+    <%
+    import operator
+    posts.sort(key=operator.itemgetter("date"), reverse=True)
+    %>
+
+    <ol class="post-index">
+    ## % for post in posts:
+    % for year, post in with_new_years(posts):
+    % if year:
+    <li class="delimiter"><span class="year">${year}</span><hr></li>
+    % endif
+    <li>
+        <span class="date tepid">${post['date'].strftime('%b %-d')}</span>
+        <span class="item">
+            <% post_dir = f'{SITE.url}/{post["rstpath"].parent.relative_to(PATHS.posts)}' %>
+            <div><a class="title" href="${post_dir}">${post['title']}</a></div>
+            ## % for tag in post.get('tags', ()):
+            ##     <span class="tepid tag">${tag}${'' if loop.last else ','}</span>
+            ## % endfor
+            % if 'summary' in post:
+            <span class="tepid article-text">${post['summary']}</span>
+            % endif
+        </span>
+    </li>
+    % endfor
+    </ol>
+
+    <footer>
+        <%include file="partials/copyright.html"/>
+        <p class="tepid">
+        % if SITE.rss:
+            <a class="tepid" href="${SITE.url}/${SITE.rss}">rss</a>
+        % endif
+        % if SITE.rss and SITE.atom:
+            &#9702;
+        % endif
+        % if SITE.atom:
+            <a class="tepid" href="${SITE.url}/${SITE.atom}">atom</a>
+        % endif
+    </footer>
+</main>
+
+</%block>

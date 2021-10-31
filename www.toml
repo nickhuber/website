@@ -1,0 +1,31 @@
+[paths]
+out = "/tmp/www"
+work = "/tmp/fucko"
+static = "static"
+posts = "content/blog"
+pages = "content/pages"
+dated = "%Y/%m/{slug}"
+
+[site]
+url = ""  # where to find this on the world wide web - (not including a trailing slash)
+rss = "feeds/blog.rss.xml"  # URL path appended to [site].url, optional, enables feeds
+atom = "feeds/blog.atom.xml"  # like the rss option, you can have both but idk why
+name = "Nick's blog"
+author = "Nick Huber"
+logo = "me.jpg"  # something under paths.static
+logo_alt = "my dumb face"
+# description = "Hi. This is my website."
+timezone = "America/Vancouver"  # default timezone
+social = [
+    "github.com/nickhuber",
+    "youtube.com/channel/UCYFRJqnrSddXDQCKOZbPd7g",
+]
+
+[build]
+cc = "cc"
+# when set, ninja will compile and run fucko-fwd, a small C program that sends
+# steps to fucko instead of starting new Python processes for each build step.
+fwd = true
+# when getting build steps from fucko-fwd, fork the main Python process and run
+# them in a child.  Does nothing if fwd is false. (SpOoKy/ExPeRiMeNtAl)
+fork = true

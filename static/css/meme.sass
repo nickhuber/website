@@ -1,0 +1,513 @@
+@import "_vars.sass"
+@import "_fonts.sass"
+
+$main: 40rem
+$gap:   2rem
+$side: 18rem
+
+/**********************************************************************/
+/* eyecandy ... */
+@mixin wiggly-underline($pad)
+  text-decoration: none
+  position: relative
+  padding: $pad
+  background: none // remove underscore
+  white-space: nowrap
+
+  &::after
+    content: ""
+    position: absolute
+    height: 2px
+    bottom: $pad/2
+    left: $pad
+    right: $pad
+    background-color: #1d2021
+    @media (prefers-color-scheme: dark)
+      background-color: #f9f5d7
+    visibility: hidden
+    transform: scaleX(0)
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+
+  &:hover
+    text-decoration: none;
+
+  &:hover::after
+    visibility: visible;
+    transform: scaleX(1);
+
+/**********************************************************************/
+/* actually interesting stuff presumably */
+
+.post-index
+  padding: 0
+  li
+    list-style: none
+    padding: .5rem 0
+    display: flex
+    grid-gap: 1rem
+
+  li.delimiter
+    align-items: center
+    hr
+      flex-grow: 1
+    .year
+      font-size: 1.7rem
+      width: 4.5rem
+      text-align: right
+
+  .item
+    @media screen and (min-width: 832px)
+      max-width: $main
+  a.title
+    font-size: 1.7rem
+    text-decoration: none
+    // @include wiggly-underline(0)
+  .date
+    flex-shrink: 0
+    width: 4.5rem
+    white-space: nowrap
+    text-align: right
+  .tag
+    font-style: italic
+  .article-text p
+    margin: 0
+    font-size: 1.1rem
+    line-height: 1.6rem
+  .tepid.article-text a
+    @extend .tepid
+
+.wow-much-social
+  display: inline-flex
+  flex-wrap: wrap
+  grid-gap: 1rem
+  a
+    display: flex
+    grid-gap: 2px
+    font-size: 1.2rem
+    align-items: center
+    @include wiggly-underline(0)
+
+  .gitlab
+    color: #af3a03
+    @media (prefers-color-scheme: dark)
+      color: #fe8019
+  .github
+    color: #282828
+    @media (prefers-color-scheme: dark)
+      color: #fbf1c7
+  .bitbucket
+    color: #076678
+    @media (prefers-color-scheme: dark)
+      color: #458588
+  .srht
+    color: #282828
+    @media (prefers-color-scheme: dark)
+      color: #fbf1c7
+  .youtube
+    color: #cc241d
+
+.numeral
+  font-family: serif
+
+.tepid
+  color: #665c54
+  @media (prefers-color-scheme: dark)
+    color: #bdae93
+
+.newthought
+  font-variant: small-caps
+  font-size:    1.2em
+
+.hl-yellow
+  background: fade-out(#d79921, .75)
+
+.hl-purple
+  background: fade-out(#b16286, .75)
+
+.hl-purple,
+.hl-yellow,
+p > code
+  padding: 1px
+
+p > code
+  background-color:   #fbf1c7
+  @media (prefers-color-scheme: dark)
+    background-color: #282828
+
+.maths
+  transform: translate(0, 0) // helps with pixel alignment
+
+a:hover
+  text-decoration: underline
+
+.footnote-reference.superscript,
+.superscript > .fn-backref
+  line-height: 100%
+  vertical-align: super
+
+p
+  overflow-wrap: anywhere
+
+/******************************************************************************/
+/* stolen from docutils html5_polygot minimal.css                             */
+dl.field-list > dt,
+dl.option-list > dt,
+dl.docinfo > dt,
+dl.footnote > dt,
+dl.citation > dt
+  clear: left
+  float: left
+  margin: 0
+  padding: 0
+
+// my own footnote weirdness?
+dl.footnote
+  dd
+    margin: 1rem
+
+@media screen and (min-width: 832px)
+  aside > dl.footnote
+    dt
+      margin-left: -1rem
+    dd
+      margin: 0
+
+main
+  margin: auto
+  padding: 0 1rem
+
+  /* wide displays & show narrow aside column */
+  @media (min-width: 832px)
+    max-width: $main + $gap + $side
+
+    article
+      display: flow-root // prevent asided content vertical overflow?
+
+    article,
+    figure.full-width > figcaption
+      margin-right: $gap + $side
+
+    article
+      .full-width
+        margin-right: -($gap + $side)
+
+      // .full-bleed
+      //   width: 100vw // ??????
+
+      /* automatically aside figcaption? */
+      &            > figure:not(.full-width) > figcaption,
+      *:not(aside) > figure:not(.full-width) > figcaption,
+      header,
+      aside
+        width: $side
+        margin-right: -($gap + $side)
+        float: right
+        clear: right
+
+      aside > *:first-child:not(header)
+          /* try to keep aside content reasonably inline with the main whatever */
+          margin-top: 0
+
+      header
+        margin-bottom: 2rem
+        h1
+          overflow-wrap: anywhere
+          /* align a bit more nicely with the main content? */
+          margin-top: 2rem
+          /* cute line cause practicaltypography.com looks nice and I wanna too */
+          padding-top: 1rem
+          border-top: 3px solid
+          border-color: #1d2021
+          @media (prefers-color-scheme: dark)
+            border-color: #f9f5d7
+
+  /* else ... narrow display & one column (or print?)
+   * ideally we would write `not (...)` or `<=` but sass
+   * is a buggy over-complicated piece of shit
+   * https://github.com/sass/libsass/issues/2576 */
+  @media (max-width: 831px)
+    max-width: $main
+
+    header
+      text-align: right
+      border-bottom: 1px solid
+      margin-bottom: 2rem
+      h1
+        flex-direction: row-reverse
+        margin-top: 2rem
+      img
+        max-height: 3rem
+
+  article > header > p
+    font-size: inherit
+
+main > footer
+  margin-top: 3rem
+  display: flex
+  justify-content: space-between
+  @media (min-width: 832px)
+    max-width: $main
+  p
+    font-size: 1.2rem
+  a
+    text-decoration: none
+
+aside p,
+aside dl,
+.footnote p,
+figure > figcaption
+  margin-top: 0 // try not to push the aside stuff further down than it needs to be?
+  font-size: 1.1rem
+  line-height: 1.3
+
+/* support the logo in the h1? and social links below? */
+main article header h1
+  display: flex
+  justify-content: space-between
+
+  .logo
+    max-width: 96px
+
+img.logo, svg.logo
+  margin: 0
+  border-radius: 8px
+
+/* link styling */
+a
+  color: inherit
+
+  article &,
+  .article-text &
+    &:not(.footnote-reference):not(.fn-backref):not(.image-reference)
+      text-decoration: none
+      &[href^="#"]:after // should maybe .internal vs .external from docutils?
+        color: #d65d0e // orange -- like footnotes
+      &:after
+        content: "➭"
+        font-size: 85%
+        vertical-align: super
+        line-height: 0 // owo what is this
+      &:hover
+        background-color: fade-out(#076678, .90)
+        @media (prefers-color-scheme: dark)
+          background-color: fade-out(#83a598, .90)
+
+    // footnotes -- orangeish
+    &.footnote-reference,
+    &.fn-backref
+      font-size: 1rem
+      color: #d65d0e // orange
+      @extend .numeral
+
+/******************************************************************************/
+/* tufte-like stuff, see https://edwardtufte.github.io/tufte-css/             */
+
+html
+  font-size: 15px
+
+body
+  padding: 0
+  margin: auto
+  background-color: #fffff8
+  color: #1d2021
+  font-size: inherit
+  font-family: "IBM Plex Sans Condensed", serif
+
+  @media (prefers-color-scheme: dark)
+    background-color: #1d2021
+    color: #f9f5d7
+
+// TODO is there a reST version of this?
+p.subtitle
+  font-style: italic
+  margin-top: 1rem
+  margin-bottom: 1rem
+  font-size: 1.8rem
+  display: block
+  line-height: 1
+
+p
+  margin: 1.4rem 0
+table
+  margin: 1.8rem 0
+
+p, table
+  padding-right:  0
+  vertical-align: baseline
+
+table
+  width: 100%
+  border-top: 2px solid
+  border-bottom: 2px solid
+  th
+    border-bottom: 1px solid
+  border-color: #1d2021
+  @media (prefers-color-scheme: dark)
+    border-color: #f9f5d7
+
+th
+  text-align: left
+
+p, ol, ul
+  font-size: 1.4rem
+  line-height: 2.4rem
+
+th, td
+  p, .line-block
+    margin: 0
+    font-size: 1.3rem
+    line-height: 1.6rem
+
+li:not(:first-child)
+  margin-top: 0.25rem
+
+article
+  img, video, .iframe-jail-cell
+    max-width: 100%
+
+  video, .iframe-jail-cell
+    margin-bottom: 1.4rem // only do this for block because margin collapse
+
+figcaption
+  margin-bottom: 2rem
+
+/* iframes are proper fucked */
+.iframe-jail-cell
+  margin-top: 2rem
+  position: relative
+  padding-top: 56.25%
+  overflow: hidden
+  & > iframe
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+/* some sizing and stuff ripped from tufte-css */
+article
+  padding: 1rem 0rem
+
+section
+  padding-top: 1rem
+  padding-bottom: 1rem
+
+h1, h2, h3
+  font-weight: 400
+  line-height: 1
+
+h1
+  margin-top: 4rem
+  margin-bottom: 1.5rem
+  font-size: 3.2rem
+
+h2
+  font-style: italic
+  margin-top: 2.1rem
+  margin-bottom: 1.4rem
+  font-size: 2.2rem
+
+h3
+  font-style: italic
+  font-size: 1.7rem
+  margin-top: 2rem
+  margin-bottom: 1.4rem
+
+hr
+  display: block
+  height: 1px
+  border: 0
+  border-top: 1px solid #928374
+  margin: 1em 0
+  padding: 0
+
+// softer background color for selected links for some reason I guess?
+*::selection,
+*::-moz-selection
+  @media not (prefers-color-scheme: dark)
+    background: #076678
+
+/* figures */
+figure
+  margin: 1rem 0
+
+/* blockquotes */
+blockquote
+  font-size: 1.4rem;
+  margin-right: 0
+
+blockquote footer
+ font-size: 1.1rem
+ text-align: right
+
+/* epigraphs */
+.epigraph
+  margin-top: 3em
+  margin-bottom: 3em
+
+.epigraph,
+.epigraph > p
+  font-style: italic
+
+.epigraph > .attribution
+  font-style: normal
+
+.epigraph > .attribution > cite
+  font-style: italic
+
+/* codes */
+pre, code, .code
+  font-family: monospace
+
+code, .code
+  font-size: 1.0rem
+  line-height: 1.42
+
+pre.code
+  font-size: 0.9rem
+  overflow-x: auto
+
+pre.code.reflow
+  white-space: pre-wrap
+
+h1 > code,
+h2 > code,
+h3 > code
+    font-size: 0.80em
+
+.sans
+  font-family: system-ui, sans-serif
+  letter-spacing: .03em
+
+.sans > code
+    font-size: 1.2rem
+
+// is this important?
+// .aside > code,
+// .footnote > .aside + * code
+//     font-size: 0.9rem
+
+/* printy time */
+@media print
+  *
+    background: #fff
+
+  main > article
+    padding-top: 0
+
+  main
+    width: 100%
+    padding: 0
+
+  #asidebar
+    display: none
+
+  img
+    break-inside: avoid
+
+  p, table, pre
+    widows: 3
+    orphans: 3
+
+  h1, h2, h3, h4, h5, h6
+    break-after: avoid

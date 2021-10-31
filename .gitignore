@@ -1,5 +1,5 @@
-.vscode
+*egg-info*
+.ninja_log
 .venv
+.vscode
 __pycache__
-output
-theme/static/css/style.css
