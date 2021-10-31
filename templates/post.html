@@ -1,0 +1,66 @@
+## vim: syntax=mako
+<%! from fucko import striptags, humanize %>
+
+<%inherit file="base.html"/>
+
+<%block name="metas">
+    ${parent.metas()}
+    <%self:meta property="og:type"  content="article"/>
+    % if 'title' in meta:
+    <%self:meta property="og:title" content="${meta['title']}"/>
+    % endif
+    % if 'image' in meta:
+    <%self:meta property="og:image" content="${SITE.url}/${str(meta['rstpath'].parent.stem)}/${meta['image']}"/>
+    <%self:meta property="og:image:alt"/>
+    % endif
+    % if 'summary' in meta:
+    <%self:meta property="og:description"         content="${striptags(meta['summary'])}"/>
+    % endif
+    % if 'date' in meta:
+    <%self:meta property="article:published_time" content="${meta['date'].isoformat()}"/>
+    % endif
+    % if 'updated' in meta:
+    <%self:meta property="article:modified_time"  content="${meta['updated'].isoformat()}"/>
+    % endif
+    % if 'author' in meta:
+    <%self:meta property="article:author"         content="${meta['author']}"/>
+    % endif
+</%block>
+
+<%block name="title">${meta['title'] | striptags} — ${parent.title()}</%block>
+<%block name="stuff">
+
+<main>
+    <article>
+        <header>
+            <%block name="article_header">
+            <h1>${meta['title']}</h1>
+            % if 'author' in meta:
+            <p>by <span class="newthought">${meta['author']}</span>
+            % endif
+            % if 'date' in meta:
+            <p><span class="newthought">${humanize(meta['date'])}</span>
+            % endif
+            % if 'updated' in meta:
+            <p>Updated <span class="newthought">${humanize(meta['updated'])}</span>
+            % endif
+            ## <p>TODO summary?
+            ## <p>TODO warn unhandled meta fields?
+            </%block>
+        </header>
+        <%block name="article_body">${body}</%block>
+    </article>
+
+    <%block name="meme"/>
+
+    <footer>
+        % if 'date' in meta:  # TODO this branch looks stupid
+            <%include file="partials/copyright.html" args="year=meta['date'].year"/>
+        % else:
+            <%include file="partials/copyright.html"/>
+        % endif
+        <p class="tepid"><a href="${SITE.url}/">return to index</a>
+    </footer>
+</main>
+
+</%block>
