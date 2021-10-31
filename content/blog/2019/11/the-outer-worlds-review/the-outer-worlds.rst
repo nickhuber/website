@@ -1,5 +1,5 @@
-The Outer Worlds
-=================
+The Outer Worlds *Review*
+=========================
 
 :date: 2019-11-02
 :category: Reviews

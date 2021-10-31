@@ -1,5 +1,5 @@
-Rage 2
-=======
+Rage 2 *Review*
+===============
 
 :date: 2019-11-25
 :category: Reviews

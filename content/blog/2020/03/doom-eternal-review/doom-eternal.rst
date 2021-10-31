@@ -1,5 +1,5 @@
-DOOM Eternal
-=============
+DOOM Eternal *Review*
+=====================
 
 :date: 2020-03-30
 :category: Reviews
