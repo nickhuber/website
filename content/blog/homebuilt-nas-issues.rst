@@ -57,17 +57,16 @@ put together a disaster of a setup with a power supply from my wife's computer
 that I didn't feel like removing from its case.
 
 .. figure:: /images/computer-disaster.jpg
+    :alt: a very messy computer setup
 
-   This is what peak "I don't care anymore" troubleshooting looks like. Numerous
-   cables are stretched to their limit.
+    This is what peak "I don't care anymore" troubleshooting looks like. Numerous
+    cables are stretched to their limit.
 
 And then the computer would happily power on properly! It turns out the power
 supply my brother donated to me was a bit defective and was probably the caused
 of the initial issues I saw with the original parts. After fully scavenging the
 power supply (and ordering a new one to replace her stolen one) the computer
 finally functions and I can start configuring the software side of things!
-
-
 
 Closing thoughts
 -----------------
