@@ -122,8 +122,8 @@ crash as often and didn't leave it stopped for days or months on end.
 +-------------+------------------------------+
 
 That looks like an impressive 19 days I held someone's random connection open,
-quickly dropping quite quickly down to under day. I wonder why that one
-connection was able to stay open for so long.
+quickly dropping down to under day. I wonder why that one connection was able to
+stay open for so long.
 
 What did I do to keep the connections open
 -------------------------------------------
