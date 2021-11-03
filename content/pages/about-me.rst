@@ -1,11 +1,9 @@
-Me
-===
+About Me
+=========
 
 :date: 2019-05-18
 :summary: Who am I?
-:untitled:
-:override_url:
-:save_as: index.html
+:slug: about-me
 
 Who am I?
 ----------

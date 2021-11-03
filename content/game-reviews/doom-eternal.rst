@@ -2,7 +2,7 @@ DOOM Eternal
 =============
 
 :date: 2020-03-30
-:category: Reviews
+:category: Game Reviews
 :slug: doom-eternal
 :summary: 7/10 - Missing something that made DOOM 2016 great
 

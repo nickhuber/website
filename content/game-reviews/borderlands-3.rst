@@ -2,7 +2,7 @@ Borderlands 3
 ==============
 
 :date: 2021-10-31
-:category: Reviews
+:category: Game Reviews
 :slug: borderlands-3
 :summary: 6/10 - The story keeps getting in the way
 

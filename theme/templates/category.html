@@ -9,12 +9,13 @@
 
 {% block content %}
     <article class="intro">
-        {% for article in articles %}
+        {% for article in articles_page.object_list %}
         <section>
             <p><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
             <p><em>{{ article.locale_date }}</em>
             {{ article.summary }}
         </section>
         {% endfor %}
+        {% include "partials/pagination.html" %}
     </article>
 {% endblock %}}

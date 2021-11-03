@@ -50,7 +50,7 @@ SOCIAL = (
 DEFAULT_PAGINATION = 10
 PAGINATION_PATTERNS = (
     (1, '{url}', '{save_as}'),
-    (2, '{base_name}/page/{number}/', '{base_name}/page/{number}/'),
+    (2, '{base_name}/page/{number}/index.html', '{base_name}/page/{number}/index.html'),
 )
 THEME = "./theme"
 

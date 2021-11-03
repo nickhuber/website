@@ -2,7 +2,7 @@ Pathfinder: Wrath of the Righteous
 ===================================
 
 :date: 2021-11-01
-:category: Reviews
+:category: Game Reviews
 :slug: pathfinder-wotr
 
 :summary: 7/10 - A nice Pathfinder experience that took off a bit more than it

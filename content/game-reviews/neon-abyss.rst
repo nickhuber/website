@@ -2,7 +2,7 @@ Neon Abyss
 ===========
 
 :date: 2021-10-31
-:category: Reviews
+:category: Game Reviews
 :slug: neon-abyss
 :summary: 8/10 - Fun quick games
 

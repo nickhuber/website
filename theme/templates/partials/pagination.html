@@ -17,14 +17,14 @@
         <footer class="paginator">
             {%- if articles_page.has_previous() %}
                 {{ pagination_base_link("&larr;&nbsp;Press into the future", articles_page.previous_page_number()) }}
-                <span>Page {{ articles_page.number }} of {{ articles_paginator.num_pages }}</span>
             {%- else %}
-                <span class="hide">Retreat into the past&nbsp;&rarr;</span>
+                <span class="de-emphasize">&larr;&nbsp;Press into the future</span>
             {%- endif %}
+            <span>Page {{ articles_page.number }} of {{ articles_paginator.num_pages }}</span>
             {%- if articles_page.has_next() %}
                 {{ pagination_base_link("Retreat into the past&nbsp;&rarr;", articles_page.next_page_number()) }}
             {%- else %}
-            <span class="hide">Retreat into the past&nbsp;&rarr;</span>
+                <span class="de-emphasize">Retreat into the past&nbsp;&rarr;</span>
             {%- endif %}
         </footer>
     </article>

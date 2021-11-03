@@ -5,7 +5,11 @@
 
 {% block content %}
     {% for article in articles_page.object_list %}
-    {%   include "partials/article_body.html" %}
+    <section>
+        <p><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a> &mdash; {{ article.category }}
+        <p><em>{{ article.locale_date }}</em>
+        {{ article.summary }}
+    </section>
     {% if loop.nextitem is defined %}<hr class="separator{% if loop.index0 > 0 %} extra{% endif %}">{% endif %}
     {% endfor %}
 

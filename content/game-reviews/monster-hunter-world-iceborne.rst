@@ -2,7 +2,7 @@ Monster Hunter World: Iceborne
 ===============================
 
 :date: 2020-02-03
-:category: Reviews
+:category: Game Reviews
 :slug: monster-hunter-world-iceborne
 :summary: 8/10 - More to kill and more to explore
 
