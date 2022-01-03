@@ -73,5 +73,8 @@ made a game half the length it could have been a much more refined experience
 than having something that starts to feel like its dragging on.
 
 
+Score
+------
+
 7/10 - If you like CRPGs, and especially if you liked Pathfinder: Kingmaker, you
 will enjoy this game but be ready for a bumpy ride.

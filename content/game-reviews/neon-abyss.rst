@@ -34,4 +34,7 @@ lock or BSOD while playing this game but not while doing anything else. I didn't
 see any other reports like this so I assume it is something wrong with my
 computer and not the game but I figured I would mention it regardless.
 
+Score
+------
+
 8/10 - Fun in short bursts

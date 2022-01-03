@@ -44,5 +44,8 @@ add a few hours of gameplay each. Maybe if they get priced under $10 for the
 season pass 1 & 2 I'll pick them up but there is no way I'm touching them at
 their current price point.
 
+Score
+------
+
 6/10 - Its pretty fun if you can find a friend or 3 to play with but don't
 expect anything deep or memorable.

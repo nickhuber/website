@@ -94,6 +94,9 @@ trivial to find the wall that needs to be punched through to locate.
 The last 2 bosses of the game are just frustrating to deal with and do not feel
 like they test all of the abilities you learned throughout the game.
 
+Score
+------
+
 7/10 - Missing something that made DOOM 2016 great. If you liked DOOM 2016
 you'll probably like this, although maybe not as much.
 

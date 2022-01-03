@@ -14,5 +14,8 @@ and a new tool, the clutch claw, is at your disposal to help take down the monst
 The story is nothing special, there are only so many ways the same story can be
 told with the same outcome but the story is not the reason to play this game.
 
+Score
+------
+
 8/10 - If you enjoyed Monster Hunter World then the odds are that you will like
 the expansion.

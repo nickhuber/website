@@ -22,4 +22,7 @@ short enough, but I had to stop playing when the game wanted me to compete in
 some races to progress, with its driving mechanics not being something I wanted
 to interact with for any long period of time.
 
+Score
+------
+
 5/10 - Nothing stands out about this game, and it was impossible to keep my interest in it.

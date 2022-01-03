@@ -15,5 +15,8 @@ the game on the first planet it seemed to be quite easy to become overpowered as
 you ventured further. The game hardly ever presented any sort of meaningful
 danger.
 
+Score
+------
+
 7/10 - A neat new experience that doesn't quite live up to the hype from the
 creators of Fallout: New Vegas.
