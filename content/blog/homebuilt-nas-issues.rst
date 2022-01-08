@@ -56,7 +56,7 @@ difference. Feeling extra defeated and nearly running out of options I decide to
 put together a disaster of a setup with a power supply from my wife's computer
 that I didn't feel like removing from its case.
 
-.. figure:: /images/computer-disaster.jpg
+.. figure:: /images/homebuilt-nas-issues/computer-disaster.jpg
     :alt: a very messy computer setup
 
     This is what peak "I don't care anymore" troubleshooting looks like. Numerous
