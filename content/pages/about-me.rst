@@ -23,8 +23,6 @@ technologies like Django and VueJS. I also have a strong interest in computer
 networks, possibly related to some previous work at an SD-WAN vendor or from my
 focus on network programming at BCIT.
 
-I currently work at Tucows_, as a software engineer for `Ting Internet`_.
-
 Gaming
 -------
 
@@ -45,12 +43,7 @@ I sometimes like to make kind of silly `YouTube videos`_ about some of the
 games I play. I think its fun to learn a little bit about video editing.
 
 .. _BCIT: https://www.bcit.ca/
-.. _Tucows: https://www.tucows.com/
-.. _Ting Internet: https://ting.com/internet
-
 .. _YouTube videos: https://www.youtube.com/channel/UCYFRJqnrSddXDQCKOZbPd7g
-
 .. _Exophase: https://www.exophase.com/
-
 .. |achievements_image| image:: https://card.exophase.com/2/0/37574.png
 .. _achievements_image: https://www.exophase.com/user/rhakyr/
