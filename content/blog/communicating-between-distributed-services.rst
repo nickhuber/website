@@ -10,7 +10,7 @@ Over the years I have witness and been involved with various ways of
 communicating between services. It has varied from specific communication
 between several larger services in a `service-oriented architecture`_ pattern or
 something more akin to an event driven `microservice architecture`_. I thought
-it might be fun to recollect on them and give some of my opinions.
+it might be fun to reflect on them and give some of my opinions.
 
 PostgreSQL NOTIFY events
 -------------------------
