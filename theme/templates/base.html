@@ -62,12 +62,6 @@
     </navbar>
     <main>
         {%- block content -%}{%- endblock %}
-
-        {% if DISPLAY_FOOTER or DISPLAY_FOOTER is not defined %}
-        <footer>
-            {% include 'partials/copyright.html' %}
-        </footer>
-        {% endif %}
     </main>
 </body>
 </html>
