@@ -2,8 +2,9 @@ The worst VPN
 ==============
 
 :date: 2023-03-04
+:modified: 2020-03-20
 :category: Blog
-:slug: vpn
+:slug: the-worst-vpn
 :tags: linux, internet
 :summary: What is the worst way to make a VPN?
 
@@ -159,4 +160,7 @@ I didn't expect good performance with this, and what I got was not unexpected. I
 didn't really learn much other than a tiny bit about some Go. I probably should
 have written it in Python since it would have taken a day less probably.
 
+Some additional findings can be read about in `part 2`_ .
+
 .. _Github: https://github.com/nickhuber/pgVPN
+.. _part 2: /blog/less-worst-vpn
