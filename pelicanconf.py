@@ -8,9 +8,6 @@ SITEURL = ""
 
 PATH = "content"
 
-PLUGIN_PATHS = ["."]
-PLUGINS = ["pelext"]
-
 STATIC_PATHS =["images"]
 
 DATE_FORMATS = {"en": "%A, %-d %B %Y"}

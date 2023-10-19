@@ -86,7 +86,7 @@ Implementation details
 At first I made a simple table, with a trigger and function to send a
 `pg_notify` whenever a new packet has been inserted.
 
-.. code::
+.. code-block:: sql
 
     CREATE TABLE ipv4_packet (
         id serial PRIMARY KEY,
@@ -133,7 +133,7 @@ writing out the tun device.
 After benchmarking this and seeing the poor performance I thought about
 simplifying the schema and packet processing by changing the schema to just
 
-.. code::
+.. code-block:: sql
 
     CREATE TABLE raw_packet (
     id SERIAL PRIMARY KEY,
