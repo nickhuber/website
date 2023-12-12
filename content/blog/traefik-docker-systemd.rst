@@ -9,6 +9,10 @@ Proxying Docker containers through Traefik, using systemd
     I have no idea if this is a good idea, I don't even know if I like it yet
     but I did get it working and it seems sort of OK.
 
+.. class:: comment
+
+    This post is outdated and I recommend looking at `my newer post </blog/traefik-docker-systemd-v2>`_ to a better resource.
+
 I've been using Docker more for things lately, along with Traefik for acting as
 the reverse proxy. There are lots of guides to getting things going with
 docker-compose, but I was curious what it would take to keep each Docker
