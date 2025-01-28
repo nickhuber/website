@@ -74,7 +74,7 @@ was expecting.
 
 After a while the computer still felt like it was running a bit hot; which was
 always a problem I had with it and had a fair bit of regret that I paid extra
-for the crazy hot i7 instead of sticking with the i5. using :code`cpupower` I
+for the crazy hot i7 instead of sticking with the i5. using :code:`cpupower` I
 have tried to limit the frequency to help contain the thermals but it still
 runs a bit uncomfortably warm. Hopefully I find it good enough for the small
 amount of use I expect it to get.
