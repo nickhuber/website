@@ -5,7 +5,8 @@ Projects
 :slug: projects
 :summary: projects
 
-These are some projects of my own I have worked on.
+These are some projects of my own I have worked on. The sources for most can be
+found on my `Github <https://github.com/nickhuber>`_
 
 PACT
 -----
