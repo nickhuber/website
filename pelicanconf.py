@@ -51,5 +51,7 @@ PAGINATION_PATTERNS = (
 )
 THEME = "./theme"
 
+ENABLE_THPPTPHTPHPHHPH = False
+
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True

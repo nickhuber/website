@@ -20,3 +20,4 @@ FEED_ALL_RSS = 'feeds/all.rss.xml'
 CATEGORY_FEED_RSS = 'feeds/{slug}.rss.xml'
 
 DELETE_OUTPUT_DIRECTORY = True
+ENABLE_THPPTPHTPHPHHPH = True

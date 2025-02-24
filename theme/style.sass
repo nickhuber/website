@@ -27,6 +27,70 @@
 article
   padding-bottom: 1em
 
+div
+	&.admonition
+		padding: 8px 35px 8px 0px
+		margin-bottom: 20px
+		color: #c09853
+		text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5)
+		background-color: #fcf8e3
+		border: 1px solid #fbeed5
+		-webkit-border-radius: 4px
+		-moz-border-radius: 4px
+		border-radius: 4px
+		p
+			margin: 0.5em 1em 0.5em 1em
+			padding: 0
+			&.admonition-title
+				margin: 0
+				padding: 0.1em 0 0.1em 0.5em
+				font-weight: bold
+		pre
+			margin: 0.4em 1em 0.4em 1em
+div.admonition ul, div.admonition ol
+	margin: 0.1em 0.5em 0.5em 3em
+	padding: 0
+div.danger,
+div.error
+	color: #b94a48
+	background-color: #f2dede
+	border-color: #eed3d7
+div.warning,
+div.caution,
+div.attention
+div.note,
+div.important
+	color: #468847
+	background-color: #dff0d8
+	border-color: #d6e9c6
+div.hint,
+div.tip
+	color: #3a87ad
+	background-color: #d9edf7
+	border-color: #bce8f1
+div.danger p.admonition-title:before,
+div.error p.admonition-title:before,
+div.warning p.admonition-title:before,
+div.caution p.admonition-title:before,
+div.attention p.admonition-title:before,
+div.important p.admonition-title:before,
+div.note p.admonition-title:before,
+div.hint p.admonition-title:before,
+div.tip p.admonition-title:before
+div.danger p.admonition-title:before,
+div.error p.admonition-title:before
+	content: "⚠"
+div.warning p.admonition-title:before,
+div.caution p.admonition-title:before,
+div.attention p.admonition-title:before
+	content: "⚠"
+div.important p.admonition-title:before,
+div.note p.admonition-title:before
+	content: "⚠"
+div.hint p.admonition-title:before,
+div.tip p.admonition-title:before
+	content: "⚠"
+
 .strike
   text-decoration: line-through
 
@@ -392,7 +456,7 @@ h3 > code
   h1, h2, h3, h4, h5, h6
     break-after: avoid
 
-.highlight 
+.highlight
   background: #f9f9f9
   .c
     color: #888888 /* Comment */
@@ -677,4 +741,4 @@ h3 > code
       color: #cc241d /* Name.Variable.Instance */
     .il
       color: #d65d0e /* Literal.Number.Integer.Long */
- 
+
