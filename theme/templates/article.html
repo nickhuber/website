@@ -17,6 +17,9 @@
     {% endif %}
     <meta property="article:author" content="{{ AUTHOR }}" />
     <meta property="article:section" content="{{ article.category | e }}" />
+    {% if article.extra_css %}
+    <link rel="stylesheet" href="{{ SITEURL }}/{{ article.extra_css }}" type="text/css" />
+    {% endif %}
 {% endblock %}
 
 {% block title %}{{ article.title | striptags | e }} | {{ SITENAME }}{% endblock %}

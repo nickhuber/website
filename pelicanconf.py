@@ -8,7 +8,7 @@ SITEURL = ""
 
 PATH = "content"
 
-STATIC_PATHS =["images"]
+STATIC_PATHS =["images", "styles"]
 
 DATE_FORMATS = {"en": "%A, %-d %B %Y"}
 
@@ -18,7 +18,6 @@ DEFAULT_LANG = "en"
 
 DOCUTILS_SETTINGS = {"smart_quotes": True, "footnote_references": "superscript"}
 
-STATIC_PATHS = ["images"]
 ARTICLE_URL = "{category}/{slug}/"
 ARTICLE_SAVE_AS = "{category}/{slug}/index.html"
 CATEGORY_URL = "{slug}/"
