@@ -11,7 +11,7 @@
     <article class="intro">
         {% for article in articles_page.object_list %}
         <section>
-            <p><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+            <p class="article-title"><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
             <p><em>{{ article.locale_date }}</em>
             {{ article.summary }}
         </section>
