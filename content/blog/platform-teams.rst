@@ -28,9 +28,9 @@ I want to break this into 2 main categories:
 This is because I have observed some more specific issues into how
 infrastructure is managed than the rest of the platform team problem.
 
-Platforms teams aren't inheritely evil and are created out of a sense of
+Platforms teams aren't inherently evil and are created out of a sense of
 purpose. Maybe years of short sighted decisions have let technical debt get to
-a breaking point or these ideas could be brought in from a new hire intendeding
+a breaking point or these ideas could be brought in from a new hire intending
 to add some lacking technical expertise to a growing company.
 
 Infrastructure
@@ -39,11 +39,11 @@ Infrastructure
 The most common name for a team like this is "DevOps", but DevOps is more of a
 culture or paradigm than a team. If you create a team called DevOps you almost
 certainly aren't realizing the potential of DevOps; you are just have what
-would tradionally be called the operations team.
+would traditionally be called the operations team.
 
 This style of platform team will be less knowledge about your business
 domain-specific problems and focus on solving generic infrastructure related
-problem — cloud cost optimizations, kubernetes upgrades, CI pipelines, etc.
+problem — cloud cost optimizations, Kubernetes upgrades, CI pipelines, etc.
 Things may even get to the point where everything is working well for the
 current business size but the infrastructure team needs something to do, so
 they will find something: replacing services or tools with competitors because
@@ -68,7 +68,7 @@ I consider these teams "gatekeepers". The gatekeepers have a disconnected view
 on reality from that of a developer building a feature, or a product manager
 planning a feature: they are on a never-ending quest to adjust the tools and
 set the standards to be used by the people designing and implementing features.
-A gatekeeper will have grandeous plans for "the future" and will try to block
+A gatekeeper will have grandiose plans for "the future" and will try to block
 or delay work from being done that doesn't align with their vision.
 
 The gatekeeper is so focused on doing things "right" the first time and will
