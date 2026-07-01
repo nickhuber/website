@@ -74,7 +74,10 @@ With `adb` ready to go, just run `adb connect <ip:port from previous step>` and
 then accept a prompt from the Android device to trust this connection.
 
 The only thing we need to do is disable the launcher, and to do that we can just
-run `adb shell pm disable-user --user 0 com.google.android.tvlauncher`.
+run::
+
+    adb shell pm disable-user --user 0 com.google.android.tvlauncher
+
 
 The Android device should now ask you which launcher you want to use (I had a
 few installed at the time, maybe it doesn't list anything for you if you only
@@ -87,8 +90,11 @@ Closing remarks
 
 I did disable a few other services as well in earlier troubleshooting, but I
 don't think they are relevant to swapping the launcher. For the sake of
-completeness they were `com.google.android.leanbacklauncher` and
-`com.google.android.leanbacklauncher.recommendations`
+completeness they were::
+
+    adb shell pm disable-user --user 0 com.google.android.leanbacklauncher
+    adb shell pm disable-user --user 0 com.google.android.leanbacklauncher.recommendations
+
 
 It is maybe a good idea to turn off the network debugging option when you are
 done, since it probably reduces the overall security of your device or
